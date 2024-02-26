@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Reem+Kufi+Ink&display=swap');
+
+/* 
+font-family: "DM Sans", sans-serif;
+font-family: "Reem Kufi Ink", sans-serif;
+*/
+
+:root{
+  /* variavel das fontes */
+  --dm-sans: 'DM Sans', sans-serif;
+  --reem-kufi: 'Reem Kufi Ink', sans-serif;
+
+   /* variavel de fonte weight do DM Sans */
+
+  --extra-light: 200;
+  --light: 300;
+  --regular: 400;
+  --medium: 500;
+  --semi-bold: 600;
+  --bold: 700;
+  --extra-bold: 800;
+  --black: 900;
+  
+  /* variável pras cores */
+  --cosmic-cobalt: #312787;
+	--purplish-blue: #5a48f9;
+	--blurstering-blue: #4318ff;
+	--shy-moment: #aaa1ff;
+	--mild-blue-yonder: #a3aed0;
+	--washed-black: #212529;
+	--antartic-deep: #343a40;
+	--seared-grey: #495057;
+	--pompeii-ash: #6c757d;
+	--cloud-cover: #adb5bd;
+	--sadin-white: #ced4da;
+	--birght-star: #dee2e6;
+	--icewind-dale: #e9ecef;
+	--doctor: #f8f9fa;
+
+  /* outras variáveis */
+  --header-background: rgba(33, 37, 41, 0.9);
+
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
