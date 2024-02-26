@@ -8,7 +8,8 @@ import heroImage from "../../assets/images/hero-image.svg"
 
 export default function LandingPage() {
     return (
-        <body>
+        
+        <body> 
             <header>
                 <img src={logoSenai} alt="logo" className="logo-senai" />
                 <div className="sub-header">

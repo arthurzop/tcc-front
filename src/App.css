@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Reem+Kufi+Ink&display=swap');
 
 /* 
@@ -49,7 +48,7 @@ font-family: "Reem Kufi Ink", sans-serif;
   padding: 0;
   box-sizing: border-box;
 }
-=======
+
 .App {
   text-align: center;
 }
@@ -88,4 +87,3 @@ font-family: "Reem Kufi Ink", sans-serif;
     transform: rotate(360deg);
   }
 }
->>>>>>> 533c1e36a045453002125b1ac3f62dda42913c54
