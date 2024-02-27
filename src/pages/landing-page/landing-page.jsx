@@ -16,6 +16,10 @@ import espaco2 from "../../assets/images/espaco2.svg";
 import impressora1 from "../../assets/images/impressora1.svg";
 import impressora2 from "../../assets/images/impressora2.svg";
 import impressora3 from "../../assets/images/impressora3.svg";
+import tutorial1 from "../../assets/images/tutorial1.svg";
+import tutorial2 from "../../assets/images/tutorial2.svg";
+import tutorial3 from "../../assets/images/tutorial3.svg";
+import tutorial4 from "../../assets/images/tutorial4.svg";
 
 export default function LandingPage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -137,29 +141,70 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
-        <div className="tutorial-container">
-          <h1 className="tutorial-titulo">Como Agendar</h1>
-          <div className="tutorial-sub-container">
-            <img src="" alt="" />
-            <p>aa</p>
+        <div className="tutorial-container" data-aos="fade-up"
+          data-aos-duration="2000" >
+          <h1 className="tutorial-title">Como Agendar</h1>
+          <div className="tutorial-divider-up"></div>
+          <div className="tutorial-sub-container" data-aos="fade-right"
+          data-aos-duration="3000" >
+            <img className="tutorial-image" src={tutorial1} alt="" />
+            <p className="tutorial-text">
+              <span className="background-text">1. </span> Registre-se (ou faça
+              login, se já tiver uma conta). Para agendar é necessário estar
+              registrado.
+            </p>
           </div>
-          <div className="divider"></div>
-          <div className="tutorial-sub-container">
-            <img src="" alt="" />
-            <p>aa</p>
+          <div className="tutorial-divider"></div>
+          <div className="tutorial-sub-container" data-aos="fade-left"
+          data-aos-duration="3000">
+            <p className="tutorial-text">
+              <span className="background-text">2. </span>Separe seu projeto em
+              PDF ou Imagem! Saiba para quando quer agendar e o tempo estimado de
+              impressão.
+            </p> 
+            <img className="tutorial-image" src={tutorial4} alt="" />
           </div>
-          <div className="divider"></div>
-          <div className="tutorial-sub-container">
-            <img src="" alt="" />
-            <p>aa</p>
+          <div className="tutorial-divider"></div>
+          <div className="tutorial-sub-container" data-aos="fade-right"
+          data-aos-duration="3000">
+            <img className="tutorial-image" src={tutorial3} alt="" />
+            <p className="tutorial-text">
+              <span className="background-text">3. </span> Escolha a data, o
+              tempo estimado e envie o arquivo (imagem ou pdf) na área de
+              agendamento.
+            </p>
           </div>
-          <div className="divider"></div>
-          <div className="tutorial-sub-container">
-            <img src="" alt="" />
-            <p>aa</p>
+          <div className="tutorial-divider"></div>
+          <div className="tutorial-sub-container" data-aos="fade-left"
+          data-aos-duration="3000">
+            <p className="tutorial-text">
+              <span className="background-text">4. </span> Tudo pronto! Agora
+              só esperar a data e o tempo determinado para a impressão.
+            </p>
+            <img className="tutorial-image" src={tutorial2} alt="" />
           </div>
-          <div className="divider"></div>
-          <button className="tutorial-botao">Agende agora!</button>
+          <button className="tutorial-botao" data-aos="fade-up"
+          data-aos-duration="3000">Agende agora!</button>
+        </div>
+        <div className="horario-container">
+          <h1 className="horario-titulo">Horários</h1>
+          <div className="horario-sub-container">
+            <div className="horario-left">
+              <h2>Seg. a Sex.</h2>
+              <h2>Sábado</h2>
+              <h2>Domingo</h2>
+            </div>
+            <div className="horario-middle">
+              <h2>-</h2>
+              <h2>-</h2>
+              <h2>-</h2>
+            </div>
+            <div className="horario-left">
+              <h2>8h às 20h</h2>
+              <h2>Fechado</h2>
+              <h2>Fechado</h2>
+            </div>
+          </div>
         </div>
       </main>
     </body>

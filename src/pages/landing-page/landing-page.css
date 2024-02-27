@@ -48,14 +48,24 @@ header {
 }
 
 .menu-hamburger {
-  max-height: 390px;
+  max-height: 400px;
   background-color: var(--washed-black);
   color: var(--doctor);
   border-radius: 10px;
   border-top-right-radius: 0px;
   right: 0px;
-  margin: 13vh 1vw;
+  margin: 12vh 1vw;
   box-shadow: 0px 1px 22px 4px rgba(0, 0, 0, 0.5);
+}
+
+.bm-item-list{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1vh 3vw;
+  gap: 4vh;
+ 
 }
 
 .menu-item {
@@ -63,25 +73,43 @@ header {
   text-decoration: none;
   font-family: var(--dm-sans);
   font-size: 2em;
-  padding: 3vh 5vw;
   text-align: left;
   font-weight: var(--semi-bold);
   border: none;
   outline: none;
 }
 
-.menu-item:hover {
-  color: var(--icewind-dale);
-  transform: scale(1.01);
+.menu-item,
+.menu-item:after,
+.menu-item:before {
+  transition: all .5s;
+}
+
+.menu-item{
+  position: relative;
+}
+
+.menu-item:after{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 10%;
+  content: '.';
+  color: transparent;
+  background: var(--shy-moment);
+  height: 2px;
+}
+.menu-item:hover:after {
+  align-self: self-start;
+  width: 80%;
+  
 }
 
 #roxo {
   color: var(--shy-moment);
 }
 
-#roxo:hover {
-  color: #aaa1ffe0;
-}
 
 section {
   width: 110vw;
@@ -143,7 +171,7 @@ main {
   cursor: pointer;
 }
 
-.hero-button:hover {
+.hero-button:hover{
   color: white;
 }
 
@@ -177,7 +205,8 @@ main {
 }
 
 .sobre-container,
-.impressoras-container {
+.impressoras-container,
+.tutorial-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -187,7 +216,8 @@ main {
 }
 
 .sobre-title,
-.impressoras-title {
+.impressoras-title,
+.tutorial-title {
   font-size: 3.5em;
   text-shadow: -6px -1px 0px var(--blurstering-blue);
 }
@@ -246,6 +276,12 @@ main {
   border-radius: 17px;
 }
 
+.card-impressora:hover{
+  transform: scale(1.01);
+  border: 1px solid var(--blurstering-blue);
+  backdrop-filter: none;
+}
+
 .card-title {
   font-size: 2.2em;
 }
@@ -259,3 +295,100 @@ main {
   font-weight: var(--semi-bold);
   font-size: 1.2em;
 }
+
+.tutorial-container{
+  margin: 5vh 8vw;
+  background-color: var(--washed-black);
+  border-radius: 20px;
+  padding: 6vh 0;
+}
+
+.tutorial-divider{
+  width: 80%;
+  border: solid 1px var(--pompeii-ash);
+}
+
+.tutorial-divider-up{
+  width: 30%;
+  border: 1px solid var(--pompeii-ash);
+  margin-top: -6vh;
+}
+
+
+.tutorial-sub-container{
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.tutorial-image{
+  max-width: 500px;
+  max-height: 300px;
+}
+
+.tutorial-text{
+  max-width: 30vw;
+  color: var(--doctor);
+  font-weight: var(--semi-bold);
+  text-align: left;
+  font-size: 2.8em;
+}
+
+.background-text{
+  text-shadow: -5px 0px 0px var(--blurstering-blue);
+  font-size: 1.2em;
+}
+
+.tutorial-botao{
+  color: var(--doctor);
+  text-decoration: none;
+  border: 2px solid var(--blurstering-blue);
+  padding: 2vh 5vw;
+  font-size: 2em;
+  font-weight: var(--semi-bold);
+  background: transparent;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
+  /* border-radius: 5px; */
+  border-radius: 2em;
+  cursor: pointer;
+}
+
+.tutorial-botao:hover{
+  z-index: 2;
+  color: white;
+}
+
+.tutorial-botao::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: -40px;
+  transform: skewX(20deg);
+  background: rgb(49, 39, 135);
+  background: linear-gradient(
+    123deg,
+    rgba(49, 39, 135, 1) 0%,
+    rgba(90, 72, 249, 1) 34%,
+    rgba(67, 24, 255, 1) 100%
+  );
+  z-index: -1;
+  transition: all 1.5s;
+}
+
+.tutorial-botao:hover::before {
+  width: 160%;
+  z-index: -1;
+}
+
+.horario-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
