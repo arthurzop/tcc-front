@@ -64,7 +64,7 @@ export default function LandingPage() {
       <main>
         <div
           className="hero-container"
-          data-aos="fade-right"
+          data-aos="fade-down"
           data-aos-duration="1000"
         >
           <div className="hero-sub-container">
@@ -87,7 +87,7 @@ export default function LandingPage() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
               Aliquam purus sit amet luctus venenatis lectus. Dictumst quisque
-              sagittis purus sit amet. Viverra ipsum nunc aliquet{" "}
+              sagittis purus sit amet. Viverra ipsum nunc aliquet.
             </h3>
             <div className="sobre-image-container">
               <img src={espaco1} alt="a" className="sobre-image" />
@@ -96,7 +96,11 @@ export default function LandingPage() {
           </div>
         </div>
         <div className="divider"></div>
-        <div className="impressoras-container" data-aos="fade-right">
+        <div
+          className="impressoras-container"
+          data-aos="fade-right"
+          data-aos-duration="2000"
+        >
           <h1 className="impressoras-title">Nossas Impressoras</h1>
           <div className="card-container">
             <div className="card-impressora">
@@ -104,8 +108,9 @@ export default function LandingPage() {
               <img src={impressora1} alt="impressora1" className="card-image" />
               <div className="card-divider"></div>
               <p className="card-text">
-                Ideal para materiais de altas temperaturas,
-                concilia um sistema de extrusão e uma estrutura cúbica estável efechada para manter a temperatura constante.
+                Ideal para materiais de altas temperaturas, concilia um sistema
+                de extrusão e uma estrutura cúbica estável efechada para manter
+                a temperatura constante.
               </p>
             </div>
             <div className="card-impressora">
@@ -131,6 +136,30 @@ export default function LandingPage() {
               </p>
             </div>
           </div>
+        </div>
+        <div className="tutorial-container">
+          <h1 className="tutorial-titulo">Como Agendar</h1>
+          <div className="tutorial-sub-container">
+            <img src="" alt="" />
+            <p>aa</p>
+          </div>
+          <div className="divider"></div>
+          <div className="tutorial-sub-container">
+            <img src="" alt="" />
+            <p>aa</p>
+          </div>
+          <div className="divider"></div>
+          <div className="tutorial-sub-container">
+            <img src="" alt="" />
+            <p>aa</p>
+          </div>
+          <div className="divider"></div>
+          <div className="tutorial-sub-container">
+            <img src="" alt="" />
+            <p>aa</p>
+          </div>
+          <div className="divider"></div>
+          <button className="tutorial-botao">Agende agora!</button>
         </div>
       </main>
     </body>
