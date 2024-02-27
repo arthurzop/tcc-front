@@ -82,7 +82,7 @@ header {
 .menu-item,
 .menu-item:after,
 .menu-item:before {
-  transition: all .5s;
+  transition: all .25s;
 }
 
 .menu-item{
@@ -97,12 +97,12 @@ header {
   width: 10%;
   content: '.';
   color: transparent;
-  background: var(--shy-moment);
+  background: var(--pompeii-ash);
   height: 2px;
 }
 .menu-item:hover:after {
   align-self: self-start;
-  width: 80%;
+  width: 30%;
   
 }
 
@@ -111,7 +111,7 @@ header {
 }
 
 
-section {
+.section {
   width: 110vw;
   height: 100vh;
   background-color: none;
@@ -151,7 +151,7 @@ main {
   font-family: var(--dm-sans);
   font-size: 6em;
   font-weight: var(--bold);
-  text-shadow: -6px -1px 0px var(--blurstering-blue);
+  text-shadow: -3px 0px 0px var(--blurstering-blue);
 }
 
 .hero-button {
@@ -166,7 +166,22 @@ main {
   position: relative;
   transition: all 1s;
   overflow: hidden;
-  /* border-radius: 5px; */
+  border-radius: 2em;
+  cursor: pointer;
+}
+
+
+.tutorial-button{
+  color: var(--doctor);
+  text-decoration: none;
+  border: 2px solid var(--blurstering-blue);
+  padding: 2vh 5vw;
+  font-size: 1.8em;
+  font-weight: var(--semi-bold);
+  background: transparent;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
   border-radius: 2em;
   cursor: pointer;
 }
@@ -198,6 +213,36 @@ main {
   width: 160%;
 }
 
+
+.tutorial-button:hover{
+  z-index: 2;
+  color: white;
+}
+
+.tutorial-button::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: -40px;
+  transform: skewX(45deg);
+  background: rgb(49, 39, 135);
+  background: linear-gradient(
+    123deg,
+    rgba(49, 39, 135, 1) 0%,
+    rgba(90, 72, 249, 1) 34%,
+    rgba(67, 24, 255, 1) 100%
+  );
+  z-index: -1;
+  transition: all 1s;
+}
+
+.tutorial-button:hover::before {
+  width: 160%;
+  
+}
+
 .divider {
   width: 70%;
   border: solid 1px var(--mild-blue-yonder);
@@ -217,9 +262,10 @@ main {
 
 .sobre-title,
 .impressoras-title,
-.tutorial-title {
+.tutorial-title,
+.horario-title {
   font-size: 3.5em;
-  text-shadow: -6px -1px 0px var(--blurstering-blue);
+  text-shadow: -3px -2px 0px var(--blurstering-blue);
 }
 
 .sobre-sub-container {
@@ -298,7 +344,8 @@ main {
 
 .tutorial-container{
   margin: 5vh 8vw;
-  background-color: var(--washed-black);
+  background: rgb(33,37,41);
+background: linear-gradient(149deg, rgba(33,37,41,1) 0%, rgba(52,58,64,1) 48%, rgba(33,37,41,1) 100%);
   border-radius: 20px;
   padding: 6vh 0;
 }
@@ -340,55 +387,51 @@ main {
   font-size: 1.2em;
 }
 
-.tutorial-botao{
-  color: var(--doctor);
-  text-decoration: none;
-  border: 2px solid var(--blurstering-blue);
-  padding: 2vh 5vw;
-  font-size: 2em;
-  font-weight: var(--semi-bold);
-  background: transparent;
-  position: relative;
-  transition: all 1s;
-  overflow: hidden;
-  /* border-radius: 5px; */
-  border-radius: 2em;
-  cursor: pointer;
-}
-
-.tutorial-botao:hover{
-  z-index: 2;
-  color: white;
-}
-
-.tutorial-botao::before {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 0%;
-  top: 0;
-  left: -40px;
-  transform: skewX(20deg);
-  background: rgb(49, 39, 135);
-  background: linear-gradient(
-    123deg,
-    rgba(49, 39, 135, 1) 0%,
-    rgba(90, 72, 249, 1) 34%,
-    rgba(67, 24, 255, 1) 100%
-  );
-  z-index: -1;
-  transition: all 1.5s;
-}
-
-.tutorial-botao:hover::before {
-  width: 160%;
-  z-index: -1;
-}
-
 .horario-container{
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
+  margin-top: 5vh;
+  padding-top: 10vh;
+  gap: 4vh;
+  background-image: url("../../assets/images/background-elipse-2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
+.horario-sub-container{
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.horario-column{
+  display: flex;
+  flex-direction: column;
+  gap: 4vh;
+  padding: 2vh;
+  align-items: center;
+}
+
+.horario-column>h2{
+  font-size: 2.6em;
+  font-weight: var(--regular);
+}
+
+.section-2{
+  width: 110vw;
+  height: 100vh;
+  background-color: none;
+  background-image: url("../../assets/images/background-elipse-2.png");
+  background-repeat: round;
+}
+
+.footer{
+  
+  width: 100%;
+  height: 20vh;
+ 
+  bottom: 0;
+
+}
