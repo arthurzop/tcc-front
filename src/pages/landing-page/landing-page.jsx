@@ -76,7 +76,7 @@ export default function LandingPage() {
             <h1 className="hero-title">
               Conheça o <br /> nosso espaço.
             </h1>
-            <button className="hero-button">Como Agendar?</button>
+            <button className="hero-button" href="tutorial">Como Agendar?</button>
           </div>
           <img src={heroImage} alt="hero" />
         </div>
