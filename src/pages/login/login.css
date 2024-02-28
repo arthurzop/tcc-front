@@ -1,0 +1,25 @@
+.body {
+  overflow: hidden;
+}
+
+aside {
+  width: 25vw;
+  height: 100vh;
+  align-self: flex-end;
+  background: rgb(33, 37, 41);
+  background: linear-gradient(
+    168deg,
+    rgba(33, 37, 41, 1) 15%,
+    rgba(52, 58, 64, 1) 59%,
+    rgba(73, 80, 87, 1) 90%
+  );
+  padding: 2vh;
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+}
+
+.login-title {
+  color: var(--doctor);
+  font-size: 2em;
+}

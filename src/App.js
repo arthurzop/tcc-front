@@ -1,11 +1,11 @@
 import "./App.css";
 import LandingPage from "./pages/landing-page/landing-page";
-import "./App.css";
+import { Outlet } from "react-router";
 
 function App() {
   return (
-    <div className="App">
-      <LandingPage></LandingPage>
+    <div className="app">
+      <Outlet />
     </div>
   );
 }
