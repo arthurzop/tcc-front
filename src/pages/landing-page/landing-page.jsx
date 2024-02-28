@@ -20,6 +20,7 @@ import tutorial1 from "../../assets/images/tutorial1.svg";
 import tutorial2 from "../../assets/images/tutorial2.svg";
 import tutorial3 from "../../assets/images/tutorial3.svg";
 import tutorial4 from "../../assets/images/tutorial4.svg";
+import vanguardLogo from "../../assets/images/vanguard-logo.svg"
 
 export default function LandingPage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -53,10 +54,10 @@ export default function LandingPage() {
         <a id="roxo" className="menu-item" href="#Registre-se">
           Registre-se
         </a>
-        <a id="" className="menu-item" href="#contact">
+        <a id="" className="menu-item" href="#sobre" onClick={() => setMenuOpen(!menuOpen)}>
           Sobre Nós
         </a>
-        <a id="" className="menu-item" href="#horarios">
+        <a id="" className="menu-item" href="#horario" onClick={() => setMenuOpen(!menuOpen)}>
           Horários
         </a>
       </Menu>
@@ -84,6 +85,7 @@ export default function LandingPage() {
           className="sobre-container"
           data-aos="fade-left"
           data-aos-duration="2000"
+          id="sobre"
         >
           <h1 className="sobre-title">Sobre Nós</h1>
           <div className="sobre-sub-container">
@@ -141,9 +143,9 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
-        
+
         <div className="tutorial-container" data-aos="fade-up"
-          data-aos-duration="2000" >
+          data-aos-duration="2000" id="tutorial">
           <h1 className="tutorial-title">Como Agendar</h1>
           <div className="tutorial-divider-up"></div>
           <div className="tutorial-sub-container" data-aos="fade-right"
@@ -188,8 +190,8 @@ export default function LandingPage() {
             data-aos-duration="3000">Agende agora!</button>
         </div>
 
-        <div className="horario-container" >
-
+        <div className="horario-container" data-aos="fade-up"
+          data-aos-duration="2000" id="horario">
           <h1 className="horario-title">Horários</h1>
           <div className="horario-sub-container">
             <div className="horario-column">
@@ -209,21 +211,24 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
-        <div className="footer">
-        <img src="" alt="" />
-        <div className="footer-nav">
-          <div className="footer-sub-container">
-            <p>Login</p>
-            <p>Login</p>
-            <p>Login</p>
+        <footer className="footer">
+          <img src={vanguardLogo} alt="" className="footer-logo" />
+          <div className="footer-nav">
+            <div className="footer-sub">
+              <h2 className="footer-title">Nav</h2>
+              <a href="# ">Login</a>
+              <a href="#sobre">Sobre</a>
+              <a href="#tutorial">Tutorial</a>
+              <a href="#horario">Horários</a>
+
+            </div>
+            <div className="footer-sub">
+              <h2 className="footer-title">Info</h2>
+              <a href="# ">Nossa Equipe</a>
+              <a href="# ">Senai</a>
+            </div>
           </div>
-          <div className="footer-sub-container">
-            <p>Login</p>
-            <p>Login</p>
-            <p>Login</p>
-          </div>
-        </div>
-      </div>
+        </footer>
       </main>
     </body>
   );
