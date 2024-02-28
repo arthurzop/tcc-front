@@ -20,7 +20,7 @@ export default function Login() {
             ></Input>
           </Form.Item>
           <Form.Item label="Senha">
-            <Input placeholder="******"></Input>
+            <Input placeholder="*****"></Input>
           </Form.Item>
         </Form>
       </aside>
