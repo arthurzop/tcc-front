@@ -64,13 +64,10 @@ export default function LandingPage() {
           id="roxo"
           className="menu-item"
           href="/login"
-          // onClick={() => {
-          //   nav("/login");
-          // }}
         >
           Login
         </a>
-        <a id="roxo" className="menu-item" href="#Registre-se">
+        <a id="roxo" className="menu-item" href="/cadastro">
           Registre-se
         </a>
         <a
