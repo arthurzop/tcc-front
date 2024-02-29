@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
 import { slide as Menu } from "react-burger-menu";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ScrollIntoView from "react-scroll-into-view";
+import { useNavigate } from "react-router-dom";
 
 // importando imagens
 import logoSenai from "../../assets/images/logo-senai.svg";
@@ -20,10 +22,12 @@ import tutorial1 from "../../assets/images/tutorial1.svg";
 import tutorial2 from "../../assets/images/tutorial2.svg";
 import tutorial3 from "../../assets/images/tutorial3.svg";
 import tutorial4 from "../../assets/images/tutorial4.svg";
-import vanguardLogo from "../../assets/images/vanguard-logo.svg"
+import vanguardLogo from "../../assets/images/vanguard-logo.svg";
 
 export default function LandingPage() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // const nav = useNavigate();
 
   useEffect(() => {
     AOS.init();
@@ -34,9 +38,11 @@ export default function LandingPage() {
       <header data-aos="fade-down">
         <img src={logoSenai} alt="logo" className="logo-senai" />
         <div className="sub-header">
-          <h1 className="header-name">
-            Espaço Maker <span className="span-header">3D</span>
-          </h1>
+          <ScrollIntoView selector="#top">
+            <h1 className="header-name">
+              Espaço Maker <span className="span-header">3D</span>
+            </h1>
+          </ScrollIntoView>
           <img
             src={menuHamburguer}
             alt="menu hamburguer"
@@ -47,17 +53,40 @@ export default function LandingPage() {
           />
         </div>
       </header>
-      <Menu isOpen={menuOpen} width={"20%"} right className="menu-hamburger" onClose={() => setMenuOpen(!menuOpen)}>
-        <a id="roxo" className="menu-item" href="#login">
+      <Menu
+        isOpen={menuOpen}
+        width={"20%"}
+        right
+        className="menu-hamburger"
+        onClose={() => setMenuOpen(!menuOpen)}
+      >
+        <a
+          id="roxo"
+          className="menu-item"
+          href="/login"
+          // onClick={() => {
+          //   nav("/login");
+          // }}
+        >
           Login
         </a>
         <a id="roxo" className="menu-item" href="#Registre-se">
           Registre-se
         </a>
-        <a id="" className="menu-item" href="#sobre" onClick={() => setMenuOpen(!menuOpen)}>
+        <a
+          id=""
+          className="menu-item"
+          href="#sobre"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           Sobre Nós
         </a>
-        <a id="" className="menu-item" href="#horario" onClick={() => setMenuOpen(!menuOpen)}>
+        <a
+          id=""
+          className="menu-item"
+          href="#horario"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           Horários
         </a>
       </Menu>
@@ -65,20 +94,24 @@ export default function LandingPage() {
         className="section"
         data-aos="fade-down"
         data-aos-duration="3000"
+        id="top"
       ></section>
       <main>
         <div
           className="hero-container"
           data-aos="fade-down"
           data-aos-duration="1000"
+          id="hero"
         >
           <div className="hero-sub-container">
             <h1 className="hero-title">
               Conheça o <br /> nosso espaço.
             </h1>
-            <button className="hero-button" href="tutorial">Como Agendar?</button>
+            <ScrollIntoView selector="#tutorial">
+              <button className="hero-button">Como Agendar?</button>
+            </ScrollIntoView>
           </div>
-          <img src={heroImage} alt="hero" />
+          <img src={heroImage} alt="hero" className="hero-image" />
         </div>
         <div className="divider"></div>
         <div
@@ -90,10 +123,10 @@ export default function LandingPage() {
           <h1 className="sobre-title">Sobre Nós</h1>
           <div className="sobre-sub-container">
             <h3 className="sobre-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Aliquam purus sit amet luctus venenatis lectus. Dictumst quisque
-              sagittis purus sit amet. Viverra ipsum nunc aliquet.
+              O Espaço Maker foi uma área criada na Escola Senai
+              Suiço-Brasileira - SP. Feito para disponibilizar um espaço para
+              alunos e professores utilizarem das mais novas tecnologias de
+              impressão 3D e outras tecnologias.
             </h3>
             <div className="sobre-image-container">
               <img src={espaco1} alt="a" className="sobre-image" />
@@ -144,12 +177,20 @@ export default function LandingPage() {
           </div>
         </div>
 
-        <div className="tutorial-container" data-aos="fade-up"
-          data-aos-duration="2000" id="tutorial">
-          <h1 className="tutorial-title">Como Agendar</h1>
+        <div
+          className="tutorial-container"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
+          <h1 className="tutorial-title" id="tutorial">
+            Como Agendar
+          </h1>
           <div className="tutorial-divider-up"></div>
-          <div className="tutorial-sub-container" data-aos="fade-right"
-            data-aos-duration="3000" >
+          <div
+            className="tutorial-sub-container"
+            data-aos="fade-right"
+            data-aos-duration="3000"
+          >
             <img className="tutorial-image" src={tutorial1} alt="" />
             <p className="tutorial-text">
               <span className="background-text">1. </span> Registre-se (ou faça
@@ -158,18 +199,24 @@ export default function LandingPage() {
             </p>
           </div>
           <div className="tutorial-divider"></div>
-          <div className="tutorial-sub-container" data-aos="fade-left"
-            data-aos-duration="3000">
+          <div
+            className="tutorial-sub-container"
+            data-aos="fade-left"
+            data-aos-duration="3000"
+          >
             <p className="tutorial-text">
               <span className="background-text">2. </span>Separe seu projeto em
-              PDF ou Imagem! Saiba para quando quer agendar e o tempo estimado de
-              impressão.
+              PDF ou Imagem! Saiba para quando quer agendar e o tempo estimado
+              de impressão.
             </p>
             <img className="tutorial-image" src={tutorial4} alt="" />
           </div>
           <div className="tutorial-divider"></div>
-          <div className="tutorial-sub-container" data-aos="fade-right"
-            data-aos-duration="3000">
+          <div
+            className="tutorial-sub-container"
+            data-aos="fade-right"
+            data-aos-duration="3000"
+          >
             <img className="tutorial-image" src={tutorial3} alt="" />
             <p className="tutorial-text">
               <span className="background-text">3. </span> Escolha a data, o
@@ -178,20 +225,32 @@ export default function LandingPage() {
             </p>
           </div>
           <div className="tutorial-divider"></div>
-          <div className="tutorial-sub-container" data-aos="fade-left"
-            data-aos-duration="3000">
+          <div
+            className="tutorial-sub-container"
+            data-aos="fade-left"
+            data-aos-duration="3000"
+          >
             <p className="tutorial-text">
-              <span className="background-text">4. </span> Tudo pronto! Agora
-              só esperar a data e o tempo determinado para a impressão.
+              <span className="background-text">4. </span> Tudo pronto! Agora só
+              esperar a data e o tempo determinado para a impressão.
             </p>
             <img className="tutorial-image" src={tutorial2} alt="" />
           </div>
-          <button className="tutorial-button" data-aos="fade-up"
-            data-aos-duration="3000">Agende agora!</button>
+          <button
+            className="tutorial-button"
+            data-aos="fade-up"
+            data-aos-duration="3000"
+          >
+            Agende agora!
+          </button>
         </div>
 
-        <div className="horario-container" data-aos="fade-up"
-          data-aos-duration="2000" id="horario">
+        <div
+          className="horario-container"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          id="horario"
+        >
           <h1 className="horario-title">Horários</h1>
           <div className="horario-sub-container">
             <div className="horario-column">
@@ -220,7 +279,6 @@ export default function LandingPage() {
               <a href="#sobre">Sobre</a>
               <a href="#tutorial">Tutorial</a>
               <a href="#horario">Horários</a>
-
             </div>
             <div className="footer-sub">
               <h2 className="footer-title">Info</h2>
