@@ -8,7 +8,7 @@ export default function HeaderLogin() {
   return (
     <>
       <div className="header">
-        <h1 className="header-title" onClick={() => {nav("/home")}}>
+        <h1 className="header-title" onClick={() => {nav("/")}}>
           Espaço Maker <span>3D</span>
         </h1>
         <img src={logoSenai} alt="" />
