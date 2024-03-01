@@ -67,7 +67,10 @@ export default function LandingPage() {
         >
           Login
         </a>
-        <a id="roxo" className="menu-item" href="/cadastro">
+        <a id="roxo" 
+           className="menu-item" 
+           href="/cadastro"
+        >
           Registre-se
         </a>
         <a

@@ -5,56 +5,83 @@ import { Form, Input } from "antd";
 
 import HeaderLogin from "../../components/header-login/header-login";
 import { useNavigate } from "react-router-dom";
+import { Bounce, ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-export default function Login() {
+export default function Login(props) {
 
   const nav = useNavigate()
 
-  const validateMessages = {
-    required: 'Campo obrigatório!',
-    types: {
-      email: 'E-mail Inválido',
+  const [email, setEmail] = useState("")
+  const [senha, setSenha] = useState("")
+
+  const handleLogin = async () => {
+    setEmail("")
+    setSenha("")
+
+    if (email === "" || senha === "") {
+      console.log(email, senha)
+      toast.warning("Email ou Senha não preenchidos!", {icon: "⚠"})
+    }
+    else {
+      setEmail("")
+      setSenha("")
+      nav("/agendamento")
     }
   }
   return (
     <body className="body">
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        limit={1}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+        transition={Bounce}
+        theme="dark"
+        />
+
       <HeaderLogin />
       <aside>
         <div className="form-container">
           <h1 className="login-title">Login</h1>
           <Form
             className="form"
-            validateMessages={validateMessages}
           >
-            <label htmlFor="email">Email: </label>
-            <Form.Item className="form-label" >
-              <Input
-                className="login-input"
-                placeholder="Digite seu email:"
-                allowClear
-              />
-            </Form.Item>
-            <label htmlFor="senha">Senha: </label>
-            <Form.Item className="form-label">
-              <Input.Password
-                className="login-input"
-                placeholder="••••••••••"
-
-              />
-              <a href="javascript:void(0)" className="esqueci-senha" onClick={() => {nav("/esqueciSenha")}}>Esqueci a senha</a>
-            </Form.Item>
+            <div className="input-container">
+              <label htmlFor="email">Email: </label>
+              <Form.Item className="form-label" >
+                <Input
+                  className="login-input"
+                  placeholder="Digite seu email:"
+                  allowClear
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </Form.Item>
+            </div>
+            <div className="input-container">
+              <label htmlFor="senha">Senha: </label>
+              <Form.Item className="form-label">
+                <Input.Password
+                  className="login-input"
+                  placeholder="••••••••••"
+                  onChange={(e) => setSenha(e)}
+                />
+                <a href="javascript:void(0)" className="esqueci-senha" onClick={() => { nav("/esqueciSenha") }}>Esqueci a senha</a>
+              </Form.Item>
+            </div>
           </Form>
+          <button className="login-button" onClick={() => handleLogin()}>Entrar</button>
 
         </div>
-        <button className="login-button">Entrar</button>
-        <p className="login-info">
-          <b>Por que fazer login?</b> <br />
-          Todas as impressões feitas no Espaço Maker devem estar associadas a um perfil, para evitarmos possíveis problemas.
-        </p>
-        <a href="" className="login-links-container">
-            <a className="login-link" onClick={() => {nav("/login")}}>Login</a>
-            <a className="login-link" onClick={() => {nav("/cadastro")}}>Cadastro</a>
-        </a>
+        <div className="login-links-container">
+          <p>Ainda não tem conta? Faça seu <a href="/cadastro" className="login-link">Cadastro</a>.</p>
+        </div>
       </aside>
     </body>
   );

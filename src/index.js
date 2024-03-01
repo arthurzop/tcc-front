@@ -9,6 +9,7 @@ import LandingPage from "./pages/landing-page/landing-page";
 import Login from "./pages/login/login";
 import EsqueciSenha from "./pages/login/esqueci-senha";
 import Cadastro from "./pages/login/cadastro";
+import Agendamento from "./pages/agendamento/agendamento";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/cadastro",
         element: <Cadastro/>
+      },
+      {
+        path: "/agendamento",
+        element:  <Agendamento />
       }
     ],
   },

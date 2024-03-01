@@ -1,14 +1,24 @@
 import React, { useState } from "react";
 import "./login.css";
 import "../../App.css";
-import { Form, Input, Select } from "antd";
+import { Form, Input, Breadcrumb } from "antd";
 
 import HeaderLogin from "../../components/header-login/header-login";
 import { useNavigate } from "react-router-dom";
+import Select from 'react-select'
 
 export default function Cadastro() {
 
-    const [cargo, setCargo] = useState(null);
+
+  const [cargo, setCargo] = useState(null);
+
+  const opcoes = [
+    { value: 'aluno', label: 'Aluno' },
+    { value: 'professor', label: 'Professor' },
+    { value: 'coordenador', label: 'Coordenador' },
+    { value: 'funcionario', label: 'Funcionário' }
+  ]
+
 
   const nav = useNavigate()
 
@@ -22,52 +32,46 @@ export default function Cadastro() {
     <body className="body">
       <HeaderLogin />
       <aside>
-        <div className="form-container">
+        <div className="cadastro-container">
           <h1 className="login-title">Cadastro</h1>
           <Form
-            className="form"
+            className="cadastro-form"
             validateMessages={validateMessages}
           >
-            <label htmlFor="email">Nome: </label>
+
             <Form.Item className="form-label" >
+              <label htmlFor="email">Nome: </label>
               <Input
                 className="login-input"
                 placeholder="Digite seu nome:"
                 allowClear
               />
             </Form.Item>
-            <label htmlFor="email">Email: </label>
+
             <Form.Item className="form-label" >
+              <label htmlFor="email">Email: </label>
               <Input
                 className="login-input"
                 placeholder="Digite seu email:"
                 allowClear
               />
             </Form.Item>
-            <label htmlFor="email">Cargo: </label>
-            <Form.Item className="form-label" >
-            <Select
-                defaultValue="Aluno"
-                className="select-input"
-                onChange={e => setCargo(e)}
-                options={[
-                    { value: '1', label: 'Aluno' },
-                    { value: '2', label: 'Professor' },
-                    { value: '3', label: 'Funcionário' },
-                    { value: '4', label: 'Coordenador' },
-                ]}
-            />
+            <Form.Item className="form-label">
+              <label htmlFor="email">Cargo: </label>
+              <Select options={opcoes} isClearable isSearchable placeholder="Selecione seu cargo:" />
             </Form.Item>
-            <label htmlFor="email">Sala: </label>
+
             <Form.Item className="form-label" >
-            <Input
+              <label htmlFor="email">Sala: </label>
+              <Input
                 className="login-input"
                 placeholder="Digite seu email:"
                 allowClear
               />
             </Form.Item>
-            <label htmlFor="senha">Senha: </label>
+
             <Form.Item className="form-label">
+              <label htmlFor="senha">Senha: </label>
               <Input.Password
                 className="login-input"
                 placeholder="••••••••••"
@@ -75,13 +79,12 @@ export default function Cadastro() {
               />
             </Form.Item>
           </Form>
-
         </div>
         <button className="login-button">Cadastrar</button>
-        <a href="" className="login-links-container">
-            <a className="login-link" onClick={() => {nav("/login")}}>Login</a>
-            <a className="login-link" onClick={() => {nav("/cadastro")}}>Cadastro</a>
-        </a>
+        <div className="login-links-container">
+          <p>Já tem conta? Retorne para o <a href="/login" className="login-link">Login</a>.</p>
+        </div>
+
       </aside>
     </body>
   );

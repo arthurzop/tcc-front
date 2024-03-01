@@ -35,6 +35,8 @@
   /* outras variáveis */
   --header-background: rgba(33, 37, 41, 0.9);
 
+  /* toastify */
+  --toastify-color-dark: #343a40;
 }
 
 /* style da scroll bar */

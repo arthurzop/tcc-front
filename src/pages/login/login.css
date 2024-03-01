@@ -3,13 +3,23 @@
   max-height: 100vh;
   background-image: url("../../assets/images/background-image.png");
   background-repeat: no-repeat;
-  background-size: round;
+  background-size: 80%;
   font-family: var(--dm-sans);
 }
 
+.popup{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding-top: 10%;
+  background-color: rgba(139, 139, 139, 0.8);
+}
+
 aside {
-  width: 25vw;
-  height: 200vh;
+  width: 22vw;
+  height: 100vh;
   align-self: flex-end;
   background: rgb(33, 37, 41);
   background: linear-gradient(
@@ -22,8 +32,8 @@ aside {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  z-index: 10;
 }
+
 
 .aside-sub-container{
   display: flex;
@@ -36,16 +46,35 @@ aside {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  gap: 6vh;
+  gap: 10vh;
+}
+
+.esqueci-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 5vh;
+}
+
+.esqueci-form{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 6vh 0 8vh;
 }
 
 .form{
   width: 90%;
-  color: var(--doctor);
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
 }
 
 label{
   font-size: 1.2em;
+  color: var(--doctor);
+
 }
 
 .login-title {
@@ -58,14 +87,8 @@ label{
 }
 
 .login-input{
-  padding: 1.1vh;
-}
-
-.select-input{
-  height: 4.5vh;
-  width: 100%;
-  border-radius: 5px;
-  color: var(--cloud-cover);
+  padding: .8vh;
+  color: var(--antartic-deep);
 }
 
 .esqueci-senha{
@@ -122,14 +145,41 @@ label{
   width: 100%;
   height: max-content;
   display: flex;
-  color: var(--shy-moment);
+  color: var(--doctor);
   text-decoration: none;
-  padding: 2vh 1vw;
   justify-content: space-around;
+  font-weight: var(--regular);
 }
 
 .login-link{
   cursor: pointer;
+  text-decoration: none;
+  color: var(--shy-moment);
+  font-weight: var(--bold);
 }
 
+.cadastro-container{
+  width: 90%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+}
 
+.cadastro-form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.breadcrumb{
+  cursor: pointer;
+  background-color: var(--antartic-deep);
+  width: fit-content;
+  padding: .5vh;
+  border-radius: 5px;
+}
+
+.breadcrumb-item{
+  color: var(--shy-moment);
+}
