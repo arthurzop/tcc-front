@@ -5,7 +5,7 @@ import { Form, Input } from "antd";
 
 import HeaderLogin from "../../components/header-login/header-login";
 import Select from 'react-select'
-import { Slide, ToastContainer, toast } from "react-toastify";
+import { Bounce, ToastContainer, toast } from "react-toastify";
 
 export default function Cadastro() {
 
@@ -39,12 +39,13 @@ export default function Cadastro() {
         pauseOnFocusLoss
         draggable
         pauseOnHover={false}
+        transition={Bounce}
         theme="dark"
         />
 
 
       <HeaderLogin />
-      <aside>
+      <aside className="login-sidebar">
         <div className="cadastro-container">
           <h1 className="login-title">Cadastro</h1>
           <Form
@@ -57,6 +58,8 @@ export default function Cadastro() {
                 className="login-input"
                 placeholder="Digite seu nome:"
                 allowClear
+                onChange={(e) => setNome(e.target.value)}
+
               />
             </Form.Item>
 
@@ -71,7 +74,13 @@ export default function Cadastro() {
             </Form.Item>
             <Form.Item className="form-label">
               <label htmlFor="email">Cargo: </label>
-              <Select options={opcoes} isClearable isSearchable placeholder="Selecione seu cargo:" />
+              <Select 
+              options={opcoes} 
+              isClearable 
+              isSearchable 
+              placeholder="Selecione seu cargo:" 
+              onChange={(e) => setCargo(e.target.value)}
+              />
             </Form.Item>
 
             <Form.Item className="form-label" >
@@ -80,6 +89,8 @@ export default function Cadastro() {
                 className="login-input"
                 placeholder="Digite seu email:"
                 allowClear
+                onChange={(e) => setSala(e.target.value)}
+
               />
             </Form.Item>
 
@@ -88,7 +99,7 @@ export default function Cadastro() {
               <Input.Password
                 className="login-input"
                 placeholder="••••••••••"
-
+                onChange={(e) => setSenha(e.target.value)}
               />
             </Form.Item>
           </Form>

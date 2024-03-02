@@ -46,7 +46,7 @@ export default function Login(props) {
         />
 
       <HeaderLogin />
-      <aside>
+      <aside className="login-sidebar">
         <div className="form-container">
           <h1 className="login-title">Login</h1>
           <Form

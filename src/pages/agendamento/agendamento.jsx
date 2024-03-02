@@ -3,9 +3,9 @@ import HeaderSidebar from "../../components/header-sidebar/header-sidebar"
 
 export default function Agendamento(){
     return(
-        <>
-        <HeaderSidebar/>
-        <main></main>
-        </>
+        <div className="agendamento-body">
+            <HeaderSidebar/>
+            <div></div>
+        </div>
     )
 }

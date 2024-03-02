@@ -10,7 +10,7 @@ export default function EsqueciSenha() {
   return (
     <body className="body">
       <HeaderLogin />
-      <aside>
+      <aside className="login-sidebar">
         <div className="aside-sub-container">
           <h1 className="login-title">Esqueceu a <br /> sua senha?</h1>
           <div className="esqueci-container">

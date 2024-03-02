@@ -17,7 +17,7 @@
   background-color: rgba(139, 139, 139, 0.8);
 }
 
-aside {
+.login-sidebar {
   width: 22vw;
   height: 100vh;
   align-self: flex-end;

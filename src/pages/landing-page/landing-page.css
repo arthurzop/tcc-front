@@ -17,7 +17,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 2vh 3vw;
-  box-shadow: 0px 1px 22px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 1px 22px 4px rgba(0, 0, 0, 0.103);
   position: fixed;
   z-index: 99;
 }
@@ -353,8 +353,8 @@ main {
 }
 
 .tutorial-divider {
-  width: 80%;
-  border: solid 1px var(--pompeii-ash);
+  width: 50%;
+  border: solid .5px var(--pompeii-ash);
 }
 
 .tutorial-divider-up {
@@ -364,7 +364,7 @@ main {
 }
 
 .tutorial-sub-container {
-  width: 90%;
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -377,10 +377,11 @@ main {
 
 .tutorial-text {
   max-width: 30vw;
+  font-family: var(--dm-sans);
   color: var(--doctor);
   font-weight: var(--semi-bold);
   text-align: left;
-  font-size: 2.8em;
+  font-size: 2.5em;
 }
 
 .background-text {

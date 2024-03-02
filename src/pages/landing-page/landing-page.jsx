@@ -7,7 +7,6 @@ import { slide as Menu } from "react-burger-menu";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ScrollIntoView from "react-scroll-into-view";
-import { useNavigate } from "react-router-dom";
 
 // importando imagens
 import logoSenai from "../../assets/images/logo-senai.svg";
@@ -60,17 +59,10 @@ export default function LandingPage() {
         className="menu-hamburger"
         onClose={() => setMenuOpen(!menuOpen)}
       >
-        <a
-          id="roxo"
-          className="menu-item"
-          href="/login"
-        >
+        <a id="roxo" className="menu-item" href="/login">
           Login
         </a>
-        <a id="roxo" 
-           className="menu-item" 
-           href="/cadastro"
-        >
+        <a id="roxo" className="menu-item" href="/cadastro">
           Registre-se
         </a>
         <a
@@ -113,7 +105,7 @@ export default function LandingPage() {
           </div>
           <img src={heroImage} alt="hero" className="hero-image" />
         </div>
-        <div className="divider"></div>
+
         <div
           className="sobre-container"
           data-aos="fade-left"
@@ -191,12 +183,12 @@ export default function LandingPage() {
             data-aos="fade-right"
             data-aos-duration="3000"
           >
-            <img className="tutorial-image" src={tutorial1} alt="" />
             <p className="tutorial-text">
               <span className="background-text">1. </span> Registre-se (ou faça
               login, se já tiver uma conta). Para agendar é necessário estar
               registrado.
             </p>
+            <img className="tutorial-image" src={tutorial1} alt="" />
           </div>
           <div className="tutorial-divider"></div>
           <div
@@ -204,12 +196,13 @@ export default function LandingPage() {
             data-aos="fade-left"
             data-aos-duration="3000"
           >
+            
+            <img className="tutorial-image" src={tutorial4} alt="" />
             <p className="tutorial-text">
               <span className="background-text">2. </span>Separe seu projeto em
               PDF ou Imagem! Saiba para quando quer agendar e o tempo estimado
               de impressão.
             </p>
-            <img className="tutorial-image" src={tutorial4} alt="" />
           </div>
           <div className="tutorial-divider"></div>
           <div
@@ -217,12 +210,13 @@ export default function LandingPage() {
             data-aos="fade-right"
             data-aos-duration="3000"
           >
-            <img className="tutorial-image" src={tutorial3} alt="" />
             <p className="tutorial-text">
               <span className="background-text">3. </span> Escolha a data, o
               tempo estimado e envie o arquivo (imagem ou pdf) na área de
               agendamento.
             </p>
+            <img className="tutorial-image" src={tutorial3} alt="" />
+            
           </div>
           <div className="tutorial-divider"></div>
           <div
@@ -230,19 +224,13 @@ export default function LandingPage() {
             data-aos="fade-left"
             data-aos-duration="3000"
           >
+            <img className="tutorial-image" src={tutorial2} alt="" />
             <p className="tutorial-text">
               <span className="background-text">4. </span> Tudo pronto! Agora só
               esperar a data e o tempo determinado para a impressão.
             </p>
-            <img className="tutorial-image" src={tutorial2} alt="" />
           </div>
-          <button
-            className="tutorial-button"
-            data-aos="fade-up"
-            data-aos-duration="3000"
-          >
-            Agende agora!
-          </button>
+          <button className="tutorial-button">Agende agora!</button>
         </div>
 
         <div
@@ -275,7 +263,7 @@ export default function LandingPage() {
           <div className="footer-nav">
             <div className="footer-sub">
               <h2 className="footer-title">Nav</h2>
-              <a href="# ">Login</a>
+              <a href="/login">Login</a>
               <a href="#sobre">Sobre</a>
               <a href="#tutorial">Tutorial</a>
               <a href="#horario">Horários</a>
@@ -283,7 +271,12 @@ export default function LandingPage() {
             <div className="footer-sub">
               <h2 className="footer-title">Info</h2>
               <a href="# ">Nossa Equipe</a>
-              <a href="# ">Senai</a>
+              <a
+                href="https://sp.senai.br/unidade/suicobrasileira/"
+                target="blank_"
+              >
+                Senai
+              </a>
             </div>
           </div>
         </footer>
