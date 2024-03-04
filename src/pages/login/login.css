@@ -89,6 +89,7 @@ label{
 .login-input{
   padding: .8vh;
   color: var(--antartic-deep);
+  width: 100%;
 }
 
 .esqueci-senha{
@@ -170,16 +171,4 @@ label{
   width: 100%;
   display: flex;
   flex-direction: column;
-}
-
-.breadcrumb{
-  cursor: pointer;
-  background-color: var(--antartic-deep);
-  width: fit-content;
-  padding: .5vh;
-  border-radius: 5px;
-}
-
-.breadcrumb-item{
-  color: var(--shy-moment);
 }

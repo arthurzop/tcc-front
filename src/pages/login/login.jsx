@@ -52,7 +52,7 @@ export default function Login(props) {
           <Form
             className="form"
           >
-            <div className="input-container">
+            <div className="login-input-container">
               <label htmlFor="email">Email: </label>
               <Form.Item className="form-label" >
                 <Input
@@ -64,7 +64,7 @@ export default function Login(props) {
                 />
               </Form.Item>
             </div>
-            <div className="input-container">
+            <div className="login-input-container">
               <label htmlFor="senha">Senha: </label>
               <Form.Item className="form-label">
                 <Input.Password
