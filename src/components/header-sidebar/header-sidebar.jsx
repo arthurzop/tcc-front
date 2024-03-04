@@ -8,7 +8,7 @@ export default function HeaderSidebar() {
   const location = useLocation("");
 
   const [menuOpen, setMenuOpen] = useState(false);
-  const [subMenuOpen, setsubMenuOpen] = useState(true);
+  const [subMenuOpen, setsubMenuOpen] = useState(false);
 
   const nav = useNavigate();
 
