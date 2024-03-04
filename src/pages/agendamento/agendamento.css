@@ -3,5 +3,109 @@
     height: 100vh;
     max-height: 100vh;
     width: 100%;
-    
+    font-family: var(--dm-sans);
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.agendamento-container{
+    position: absolute;
+    margin: 10vh 14vw;
+    padding-top: 2vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.agendamento-form-container{
+    width: 57%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2vh 0;
+    gap: 4vh;
+    overflow-y: scroll;
+}
+
+.agendamento-title{
+    font-size: 2.2em;
+}
+
+.input-container{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.aside-image{
+    position: absolute;
+    right: 0;
+    z-index: 0;
+    margin: 10vh 0;
+    height: 95vh;
+    overflow-y: hidden !important;
+}
+
+.label{
+    font-weight: var(--semi-bold);
+    font-size: 1.2em;
+    margin-top: 2vh;
+}
+
+.tempo-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.number-picker{
+    width: 18vw;
+}
+
+.antd-input{
+    height: 4vh;
+}
+
+.dragger-info{
+    font-size: .9em;
+    align-self: center;
+    text-align: center;
+    color: var(--pompeii-ash);
+}
+
+.default-button{
+    color: var(--doctor);
+    background-color: var(--cosmic-cobalt);
+    border: none;
+    outline: none;
+    padding: 2vh 5vw;
+    font-size: 1.6em;
+    font-weight: var(--semi-bold);
+    border-radius: 10px;
+    margin: 2vh;
+    box-shadow: 0px 0px 5px 0px #000000;
+}
+
+.default-button:hover{
+    background-color: #4436c4;
+    transition: all .5s;
+}
+
+.default-button:hover:active{
+    transform: scale(1.01);
+    transition: all .1s;
+}
+
+.dragger-text{
+    color: var(--seared-grey);
+    margin-bottom: 1vh;
+}
+
+.dragger-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 20vh;  
 }

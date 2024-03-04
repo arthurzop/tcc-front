@@ -1,4 +1,5 @@
 .hs-container {
+  position: absolute;
   font-family: var(--dm-sans);
   width: 100%;
   color: var(--doctor);
@@ -100,6 +101,7 @@
     margin-right: 3vw;
     box-shadow: 0px 0px 5px 0px #000000;
     gap: 1vh;
+    z-index: 1;
 }
 
 .modal-cargo{
@@ -134,6 +136,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.226);
   cursor: pointer;
+  z-index: 1;
 }
 
 .hs-active{
@@ -160,7 +163,9 @@
 
     position: absolute;
     margin-inline-start: 16vw;
-    top: 360px;
+    top: 42vh;
+    z-index: 1;
+
 }
 
 .sub-text{

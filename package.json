@@ -16,6 +16,7 @@
     "react-scroll-into-view": "^2.1.2",
     "react-select": "^5.8.0",
     "react-toastify": "^10.0.4",
+    "react-widgets": "^5.8.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
