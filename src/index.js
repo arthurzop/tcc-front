@@ -34,8 +34,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/agendamento",
-        element:  <Agendamento />
-      }
+        element:  <Agendamento />,
+      },
+      
     ],
   },
 ]);

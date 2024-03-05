@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Avatar } from "antd";
 import iconSair from "../../assets/images/icon-sair.svg";
+import pedidos from "../../assets/images/pedidos.svg"
 
 export default function HeaderSidebar() {
   const location = useLocation("");
@@ -59,7 +60,7 @@ export default function HeaderSidebar() {
       </div>
       <div className="hs-header">
         <div className="hs-header-container">
-          <h1 className="hs-title">{location.pathname.split(`/`)[1]}</h1>
+          <h1 className="hs-title">{location.pathname.split(`/`)[1]} <span className="hs-subtitle">{location.pathname.split('/')[2]}</span> </h1>
           <p
             onClick={() => {
               setMenuOpen(!menuOpen);
@@ -90,8 +91,16 @@ export default function HeaderSidebar() {
                 nav("/");
               }}
             >
-              <img src={iconSair} alt="" className="modal-sair-icon" />
-              <h1 className="modal-sair-text">Sair</h1>
+              <div className="hs-sub-container">
+                <img src={pedidos} alt="" className="modal-icon"/>
+                <h1 className="modal-text">Seus Pedidos</h1>
+              </div>
+              <div className="sub-divider"></div>
+              <div className="hs-sub-container">
+                <img src={iconSair} alt="" className="modal-icon" />
+                <h1 className="modal-text">Sair</h1>
+              </div>
+              
             </div>
           </div>
         </>
