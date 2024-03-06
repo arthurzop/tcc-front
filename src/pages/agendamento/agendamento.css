@@ -1,42 +1,35 @@
-.agendamento-body{
+
+.section-body{
     background-color: var(--icewind-dale);
     height: 100vh;
-    max-height: 100vh;
-    width: 100%;
     font-family: var(--dm-sans);
     overflow: hidden;
-    box-sizing: border-box;
     position: relative;
 }
 
 .agendamento-container{
     position: absolute;
-    margin: 10vh 14vw;
-    padding-top: 2vh;
+    margin: 13vh 0vw 0vh 14vw;
     width: 100%;
-    overflow: hidden;
 }
 
 .agendamento-form-container{
-    width: 57%;
-    height: 80vh;
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2vh 0;
     gap: 4vh;
-    overflow-y: scroll;
 }
 
 .agendamento-title{
     font-size: 2.2em;
+    font-weight: var(--bold);
 }
 
 .input-container{
-    width: 70%;
+    width: 80%;
     display: flex;
     flex-direction: column;
-    gap: 2vh;
 }
 
 .aside-image{
@@ -51,21 +44,40 @@
 .label{
     font-weight: var(--semi-bold);
     font-size: 1.2em;
-    margin-top: 2vh;
+    margin: 3vh 0 1vh;
 }
 
-.tempo-container{
+.datetime-container{
     display: flex;
+    align-items: center;
     width: 100%;
-    justify-content: space-between;
+    gap: 2vw;
+    text-wrap: nowrap;
 }
 
-.number-picker{
-    width: 18vw;
+.datetime-sub-container{
+    width: 100%
+}
+
+.timepicker{
+    width: 100%;
+    height: 4vh;
+    outline: none;
+    border: 1px solid var(--cloud-cover);
+    border-radius: 5px;
+    
+    font-size: 1.3em;
+    color: var(--pompeii-ash);
+    padding-inline-start: 1vw;
+    
 }
 
 .antd-input{
     height: 4vh;
+}
+
+.dragger-text{
+    font-weight: var(--semi-bold);
 }
 
 .dragger-info{
@@ -80,13 +92,15 @@
     background-color: var(--cosmic-cobalt);
     border: none;
     outline: none;
-    padding: 2vh 3vw;
+    padding: 1.5vh 4vw;
     font-size: 1.4em;
     font-weight: var(--semi-bold);
     border-radius: 10px;
-    margin: 2vh;
     box-shadow: 0px 0px 5px 0px #000000;
     cursor: pointer;
+    align-self: center;
+    max-width: 20vw;
+    margin: 5vh 0;
 }
 
 .default-button:hover{
@@ -112,23 +126,63 @@
 }
 
 .confirmacao-modal-container{
-    background-color: var(--header-background);
+    background-color: var(--icewind-dale);
     border-radius: 10px;
-    padding: 2vh;
+    padding: 3vh 2vw;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 2vh;
   
     position: absolute;
-    top: 40%;
-    left: 40%;
-    width: fit-content;
+    top: 30%;
+    right: 43%;
+    width: 30vw;
     height: fit-content;
     z-index: 1;
 
-    color: var(--doctor);
-    
+    color: var(--washed-black);
+}
 
-  }
+.confirmacao-divider{
+    width: 70%;
+    border: 1px solid var(--seared-grey);
+}
+
+.modal-title{
+    font-size: 2.4em;
+    text-align: center;
+}
+
+.modal-info{
+    width: 100%;
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: var(--regular);
+}
+
+.modal-button{
+    color: var(--icewind-dale);
+    background-color: var(--cosmic-cobalt);
+    border: none;
+    outline: none;
+    padding: 1.5vh 2vw;
+    font-size: 1em;
+    font-weight: var(--semi-bold);
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2vh 0 1vh;
+}
+
+.button-container{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.grey{
+    color: var(--washed-black);
+    background-color: var(--pompeii-ash);
+}
 
 
