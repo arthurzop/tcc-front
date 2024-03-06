@@ -37,7 +37,9 @@ export default function HeaderSidebar() {
           >
             Agendamento
           </h1>
-          <h1 className="hs-menu-item" id="dashboard">
+          <h1 className="hs-menu-item" id="dashboard" onClick={() => {
+              nav("/dashboard");
+            }}>
             Dashboard
           </h1>
           <h1
@@ -59,11 +61,11 @@ export default function HeaderSidebar() {
               }}
             ></div>
             <div className="sub-container">
-              <h1 className="sub-text">Estoque</h1>
+              <h1 className="sub-text" onClick={() => {nav('/estoque')}}>Estoque</h1>
               <div className="modal-divider"></div>
-              <h1 className="sub-text">Pedidos</h1>
+              <h1 className="sub-text" onClick={() => {nav('/pedidos')}}>Pedidos</h1>
               <div className="modal-divider"></div>
-              <h1 className="sub-text">Perfis</h1>
+              <h1 className="sub-text" onClick={() => {nav('/perfis')}}>Perfis</h1>
             </div>
           </>
         )}
@@ -114,7 +116,7 @@ export default function HeaderSidebar() {
               <div
                 className="hs-sub-container"
                 onClick={() => {
-                  nav("/");
+                  nav("/login");
                 }}
               >
                 <img src={iconSair} alt="" className="modal-icon" />

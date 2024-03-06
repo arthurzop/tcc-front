@@ -1,11 +1,13 @@
 import "./pedidos.css";
 import HeaderSidebar from "../../components/header-sidebar/header-sidebar";
-import { Table, Pagination, PaginationProps } from "antd";
+import { Table } from "antd";
 
-import crudEdit from "../../assets/images/Complete.svg";
 import crudDelete from "../../assets/images/crud.svg";
+import { useState } from "react";
 
 export default function PedidosUsuario() {
+
+  //data  para a tabela
   const dataSource = [
     {
       key: "1",
@@ -63,6 +65,7 @@ export default function PedidosUsuario() {
     },
   ];
 
+  //colunas da tabela
   const columns = [
     {
       title: "User",
@@ -79,7 +82,19 @@ export default function PedidosUsuario() {
       dataIndex: "data",
       key: "data",
     },
+    {
+      title: '#',
+      key: 'deletar',
+      width: 100,
+      render: () => <a onClick={() => { setIsOpen(!isOpen) }}><img src={crudDelete} alt="" /></a>
+    }
   ];
+
+  const [isOpen, setIsOpen] = useState(false)
+
+  const handleExcluir = async () => {
+    setIsOpen(!isOpen)
+  }
 
   return (
     <div className="section-body">
@@ -91,10 +106,25 @@ export default function PedidosUsuario() {
             className="table"
             dataSource={dataSource}
             columns={columns}
-            scroll={{ y: 380 }}
+            scroll={{ y: '80%' }}
           ></Table>
         </div>
       </div>
+      {isOpen &&
+
+        <div className="modal-container">
+          <div className="hs-overlay" onClick={() => { setIsOpen(!isOpen) }}></div>
+          <div className="modal-excluir-container">
+            <h1 className="modal-title">Tem Certeza?</h1>
+            <div className="modal-divider"></div>
+            <p className="modal=excluir-text">Deseja realmente excluir este pedido? Essa ação é irreversível.</p>
+            <div className="modal-btn-container">
+              <button onClick={() => setIsOpen(!isOpen)} className="modal-btn btn-cancelar">Cancelar</button>
+              <button onClick={() => { handleExcluir() }} className="modal-btn btn-confirmar">Confirmar</button>
+            </div>
+          </div>
+        </div>
+      }
     </div>
   );
 }

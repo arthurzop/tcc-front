@@ -34,7 +34,7 @@ export default function Agendamento() {
   };
 
   return (
-    <div className="section-body">
+    <div className="section-body"> 
       <ToastContainer
         position="bottom-right"
         autoClose={3000}
