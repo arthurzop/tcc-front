@@ -1,0 +1,16 @@
+.pedidos-title {
+  font-size: 2em;
+  margin: 1vh 2vw;
+}
+
+.table-container {
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table {
+  margin-top: 5vh;
+  width: 90%;
+}

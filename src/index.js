@@ -10,6 +10,7 @@ import Login from "./pages/login/login";
 import EsqueciSenha from "./pages/login/esqueci-senha";
 import Cadastro from "./pages/login/cadastro";
 import Agendamento from "./pages/agendamento/agendamento";
+import PedidosUsuario from "./pages/pedidos-usuario/pedidos";
 
 const router = createBrowserRouter([
   {
@@ -36,7 +37,10 @@ const router = createBrowserRouter([
         path: "/agendamento",
         element:  <Agendamento />,
       },
-      
+      {
+        path: "/meus pedidos",
+        element: <PedidosUsuario/>
+      }
     ],
   },
 ]);

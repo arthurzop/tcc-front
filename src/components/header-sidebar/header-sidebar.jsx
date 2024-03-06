@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Avatar } from "antd";
 import iconSair from "../../assets/images/icon-sair.svg";
-import pedidos from "../../assets/images/pedidos.svg"
+import pedidos from "../../assets/images/pedidos.svg";
 
 export default function HeaderSidebar() {
   const location = useLocation("");
@@ -12,6 +12,10 @@ export default function HeaderSidebar() {
   const [subMenuOpen, setsubMenuOpen] = useState(false);
 
   const nav = useNavigate();
+
+  // tirando caracteres especiais do pathname da pagina
+  var pathname = location.pathname.split("/");
+  var pathname = location.pathname.replace("%20", " ").replace("/", "");
 
   return (
     <div className="hs-container">
@@ -24,7 +28,13 @@ export default function HeaderSidebar() {
         </div>
         <div className="horizontal-divider"></div>
         <div className="hs-sidebar-menu-container">
-          <h1 className="hs-menu-item" id="agendamento">
+          <h1
+            className="hs-menu-item"
+            id="agendamento"
+            onClick={() => {
+              nav("/agendamento");
+            }}
+          >
             Agendamento
           </h1>
           <h1 className="hs-menu-item" id="dashboard">
@@ -60,7 +70,12 @@ export default function HeaderSidebar() {
       </div>
       <div className="hs-header">
         <div className="hs-header-container">
-          <h1 className="hs-title">{location.pathname.split(`/`)[1]} <span className="hs-subtitle">{location.pathname.split('/')[2]}</span> </h1>
+          <h1 className="hs-title">
+            {pathname}
+            <span className="hs-subtitle">
+              {location.pathname.split("/")[2]}
+            </span>
+          </h1>
           <p
             onClick={() => {
               setMenuOpen(!menuOpen);
@@ -85,22 +100,26 @@ export default function HeaderSidebar() {
             <h1 className="modal-name">Manuela Vaz</h1>
             <h3 className="modal-cargo">Admin</h3>
             <div className="modal-divider"></div>
-            <div
-              className="modal-sair-container"
-              onClick={() => {
-                nav("/");
-              }}
-            >
-              <div className="hs-sub-container">
-                <img src={pedidos} alt="" className="modal-icon"/>
-                <h1 className="modal-text">Seus Pedidos</h1>
+            <div className="modal-sair-container">
+              <div
+                className="hs-sub-container"
+                onClick={() => {
+                  nav("/meus pedidos");
+                }}
+              >
+                <img src={pedidos} alt="" className="modal-icon" />
+                <h1 className="modal-text">Meus Pedidos</h1>
               </div>
               <div className="sub-divider"></div>
-              <div className="hs-sub-container">
+              <div
+                className="hs-sub-container"
+                onClick={() => {
+                  nav("/");
+                }}
+              >
                 <img src={iconSair} alt="" className="modal-icon" />
                 <h1 className="modal-text">Sair</h1>
               </div>
-              
             </div>
           </div>
         </>

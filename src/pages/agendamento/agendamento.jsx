@@ -9,32 +9,29 @@ import { useState } from "react";
 import upload from "../../assets/images/upload.svg";
 import asideImage from "../../assets/images/aside-image.svg";
 
-
 const { Dragger } = Upload;
 const { TextArea } = Input;
 
 export default function Agendamento() {
-
-  const [pNome, setPNome] = useState('')
-  const [pData, setPData] = useState('')
-  const [pTempo, setPTempo] = useState('')
-  const [pDescricao, setPDescricao] = useState('')
+  const [pNome, setPNome] = useState("");
+  const [pData, setPData] = useState("");
+  const [pTempo, setPTempo] = useState("");
+  const [pDescricao, setPDescricao] = useState("");
 
   const setNull = () => {
-    setPNome('')
-    setPData('')
-    setPTempo('')
-    setPDescricao('')
-  }
+    setPNome("");
+    setPData("");
+    setPTempo("");
+    setPDescricao("");
+  };
 
   const handleEnviar = async () => {
-    if (pNome === '' || pData === '' || pTempo === '' || pDescricao === '') {
-      console.log(pNome, pData, pTempo, pDescricao)
-      toast.warn("Preencha todos os campos")
+    if (pNome === "" || pData === "" || pTempo === "" || pDescricao === "") {
+      console.log(pNome, pData, pTempo, pDescricao);
+      toast.warn("Preencha todos os campos");
     } else {
-      
     }
-  }
+  };
 
   return (
     <div className="section-body">
@@ -49,9 +46,9 @@ export default function Agendamento() {
       />
 
       <HeaderSidebar />
-      <div className="agendamento-container">
+      <div className="section-container">
         <div className="agendamento-form-container">
-          <h1 className="agendamento-title">Agende a Impressão</h1>
+          <h1 className="section-title">Agende a Impressão</h1>
           <div className="input-container">
             <p className="label">Nome do Projeto: </p>
             <Input
@@ -64,21 +61,27 @@ export default function Agendamento() {
             <div className="datetime-container">
               <div className="datetime-sub-container">
                 <p className="label">Escolha a data: </p>
-                <DatePicker placeholder="dd/mm/aaaa" className="datepicker" onChange={(e) => setPData(e.target.value)}
+                <DatePicker
+                  placeholder="dd/mm/aaaa"
+                  className="datepicker"
+                  onChange={(e) => setPData(e.target.value)}
                 />
               </div>
               <div className="datetime-sub-container">
                 <p className="label">Tempo estimado de impressão: </p>
-                <input type="time" className="timepicker" onChange={(e) => setPTempo(e.target.value)}
+                <input
+                  type="time"
+                  className="timepicker"
+                  onChange={(e) => setPTempo(e.target.value)}
                 />
               </div>
             </div>
             <p className="label">Descrição do Projeto:</p>
-            <TextArea
+            <Input
               allowClear
               rows={3}
               maxLength={100}
-              draggable="false"
+              showCount
               placeholder="Escreva uma breve descrição do projeto:"
               className="antd-input"
               onChange={(e) => setPDescricao(e.target.value)}
@@ -102,7 +105,6 @@ export default function Agendamento() {
               Enviar Projeto
             </button>
           </div>
-
         </div>
       </div>
       <img src={asideImage} alt="" className="aside-image" />
