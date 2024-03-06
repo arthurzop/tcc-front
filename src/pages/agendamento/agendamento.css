@@ -71,9 +71,11 @@
   padding-inline-start: 1vw;
 }
 
-.antd-input {
-  height: 4vh;
-  resize: none;
+.antd-input,
+.timepicker {
+  height: 5vh;
+  max-height: 5vh;
+  min-height: 5vh;
 }
 
 .dragger-text {
@@ -187,15 +189,6 @@
 
 @media (max-width: 1536px) {
   .agendamento-form-container {
-    position: relative;
-    overflow-y: scroll;
-  }
-
-  .antd-input,
-  .timepicker {
-    height: 5vh;
-    max-height: 5vh;
-    min-height: 5vh;
-    resize: none;
+    gap: 0;
   }
 }
