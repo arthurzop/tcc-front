@@ -2,8 +2,13 @@ import "./header-sidebar.css";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Avatar } from "antd";
+
+
 import iconSair from "../../assets/images/icon-sair.svg";
 import pedidos from "../../assets/images/pedidos.svg";
+import calendar from "../../assets/images/calendar.svg";
+import graph from "../../assets/images/graph.svg";
+import settings from "../../assets/images/settings.svg";
 
 export default function HeaderSidebar() {
   const location = useLocation("");
@@ -35,11 +40,13 @@ export default function HeaderSidebar() {
               nav("/agendamento");
             }}
           >
+            <img src={calendar} alt="" className="svg" />
             Agendamento
           </h1>
           <h1 className="hs-menu-item" id="dashboard" onClick={() => {
-              nav("/dashboard");
-            }}>
+            nav("/dashboard");
+          }}>
+            <img src={graph} alt="" className="svg" />
             Dashboard
           </h1>
           <h1
@@ -49,6 +56,7 @@ export default function HeaderSidebar() {
               setsubMenuOpen(!subMenuOpen);
             }}
           >
+            <img src={settings} alt="" className="svg" />
             Gerenciamento
           </h1>
         </div>
@@ -61,11 +69,11 @@ export default function HeaderSidebar() {
               }}
             ></div>
             <div className="sub-container">
-              <h1 className="sub-text" onClick={() => {nav('/estoque')}}>Estoque</h1>
+              <h1 className="sub-text" onClick={() => { nav('/estoque') }}>Estoque</h1>
               <div className="modal-divider"></div>
-              <h1 className="sub-text" onClick={() => {nav('/pedidos')}}>Pedidos</h1>
+              <h1 className="sub-text" onClick={() => { nav('/pedidos') }}>Pedidos</h1>
               <div className="modal-divider"></div>
-              <h1 className="sub-text" onClick={() => {nav('/perfis')}}>Perfis</h1>
+              <h1 className="sub-text" onClick={() => { nav('/perfis') }}>Perfis</h1>
             </div>
           </>
         )}
