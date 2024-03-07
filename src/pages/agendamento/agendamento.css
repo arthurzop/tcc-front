@@ -8,16 +8,17 @@
 
 .section-container {
   position: absolute;
-  margin: 13vh 0vw 0vh 15vw;
+  margin: 12vh 0vw 0vh 15vw;
   padding: 2vh;
-  width: 100%;
+  width: 58%;
 }
 
 .agendamento-form-container {
-  width: 60%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  
   gap: 4vh;
 }
 

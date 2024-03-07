@@ -1,9 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Reem+Kufi+Ink&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Reem+Kufi+Ink&display=swap"); */
+@font-face {
+  font-family: 'DM Sans';
+  src: url('./assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Reem Kufi Ink';
+  src: url('./assets/fonts/Reem_Kufi_Ink/ReemKufiInk-Regular.ttf') format('truetype');
+}
 
 :root {
   /* variavel das fontes */
-  --dm-sans: "DM Sans", sans-serif;
-  --reem-kufi: "Reem Kufi Ink", sans-serif;
+  --dm-sans: "DM Sans";
+  --reem-kufi: "Reem Kufi Ink";
 
   /* variavel de fonte weight do DM Sans */
 
@@ -77,9 +86,6 @@
   outline: none;
   scroll-behavior: smooth;
   transition: 0.5s;
-}
-
-img {
   user-select: none;
 }
 

@@ -19,6 +19,7 @@ import CriarPerfil from "./pages/gerenciamento/perfis/criar";
 import EditarPerfil from "./pages/gerenciamento/perfis/editar";
 import Perfis from "./pages/gerenciamento/perfis/perfis";
 import Dashboard from './pages/dashboard/dashboard';
+import NotFound from "./components/not-found/not-found";
 
 
 const router = createBrowserRouter([
@@ -81,6 +82,10 @@ const router = createBrowserRouter([
       {
         path: '/dashboard',
         element: <Dashboard/>
+      },
+      {
+        path: '*',
+        element: <NotFound/>
       }
     ],
   },

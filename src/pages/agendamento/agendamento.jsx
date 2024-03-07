@@ -26,10 +26,12 @@ export default function Agendamento() {
   };
 
   const handleEnviar = async () => {
-    if (pNome === "" || pData === "" || pTempo === "" || pDescricao === "") {
+    if (pNome === "" || pTempo === "" || pDescricao === "") {
       console.log(pNome, pData, pTempo, pDescricao);
       toast.warn("Preencha todos os campos");
     } else {
+      toast.success("Enviado com sucesso!")
+      setNull()
     }
   };
 
@@ -57,6 +59,7 @@ export default function Agendamento() {
               allowClear
               maxLength={110}
               onChange={(e) => setPNome(e.target.value)}
+              
             />
             <div className="datetime-container">
               <div className="datetime-sub-container">
@@ -64,7 +67,6 @@ export default function Agendamento() {
                 <DatePicker
                   placeholder="dd/mm/aaaa"
                   className="datepicker"
-                  onChange={(e) => setPData(e.target.value)}
                 />
               </div>
               <div className="datetime-sub-container">

@@ -9,6 +9,10 @@ import pedidos from "../../assets/images/pedidos.svg";
 import calendar from "../../assets/images/calendar.svg";
 import graph from "../../assets/images/graph.svg";
 import settings from "../../assets/images/settings.svg";
+import estoque from '../../assets/images/estoque.svg'
+import todospedidos from '../../assets/images/todospedidos.svg'
+import perfis from '../../assets/images/perfis.svg'
+import down from '../../assets/images/down.svg'
 
 export default function HeaderSidebar() {
   const location = useLocation("");
@@ -58,25 +62,28 @@ export default function HeaderSidebar() {
           >
             <img src={settings} alt="" className="svg" />
             Gerenciamento
+            <img src={down} alt="" />
           </h1>
+          {subMenuOpen && (
+            <>
+              <div className="sub-container">
+                <h1 className="sub-text" onClick={() => { nav('/estoque') }}>
+                  <img src={estoque} alt="" />
+                  Estoque
+                </h1>
+                <h1 className="sub-text" onClick={() => { nav('/pedidos') }}>
+                  <img src={todospedidos} alt="" />
+                  Pedidos
+                </h1>
+                <h1 className="sub-text" onClick={() => { nav('/pedidos') }}>
+                  <img src={perfis} alt="" />
+                  Perfis
+                </h1>             
+              </div>
+            </>
+          )}
         </div>
-        {subMenuOpen && (
-          <>
-            <div
-              className="hs-overlay"
-              onClick={() => {
-                setsubMenuOpen(!subMenuOpen);
-              }}
-            ></div>
-            <div className="sub-container">
-              <h1 className="sub-text" onClick={() => { nav('/estoque') }}>Estoque</h1>
-              <div className="modal-divider"></div>
-              <h1 className="sub-text" onClick={() => { nav('/pedidos') }}>Pedidos</h1>
-              <div className="modal-divider"></div>
-              <h1 className="sub-text" onClick={() => { nav('/perfis') }}>Perfis</h1>
-            </div>
-          </>
-        )}
+
       </div>
       <div className="hs-header">
         <div className="hs-header-container">
