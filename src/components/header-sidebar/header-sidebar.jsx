@@ -60,7 +60,7 @@ export default function HeaderSidebar() {
       </div>
       <div className="hs-header">
         <div className="hs-header-container">
-          <h1 className="hs-title">{location.pathname.split(`/`)[1]} <span className="hs-subtitle">{location.pathname.split('/')[2]}</span> </h1>
+          <h1 className="hs-title">{location.pathname.split(`/`)[1]}</h1>
           <p
             onClick={() => {
               setMenuOpen(!menuOpen);
