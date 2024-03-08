@@ -22,6 +22,7 @@
   background-color: var(--washed-black);
   height: 10vh;
   width: 15vw;
+  cursor: pointer;
 }
 
 .hs-logo {
