@@ -1,8 +1,9 @@
 .pedidos-title {
   font-size: 2em;
   margin: 1vh 2vw;
+  text-transform: capitalize;
 }
- 
+
 .table-container {
   width: 150%;
   height: 80vh;
@@ -10,47 +11,46 @@
   align-items: center;
   justify-content: center;
 }
- 
+
 .table {
   margin-top: 5vh;
 }
- 
-.modal-excluir-container{
+
+.modal-excluir-container {
   background-color: var(--doctor);
   color: var(--washed-black);
   width: 20vw;
- 
+
   height: fit-content;
   padding: 4vh;
   border-radius: 10px;
- 
+
   position: absolute;
   top: 40%;
   left: 45%;
   z-index: 1;
- 
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
- 
 }
- 
-.modal-excluir-text{
+
+.modal-excluir-text {
   color: var(--pompeii-ash);
   font-weight: var(--regular);
   text-align: center;
   font-size: 1.5em;
 }
- 
-.modal-btn-container{
+
+.modal-btn-container {
   display: flex;
   width: 100%;
   justify-content: space-between;
   margin-top: 3vh;
 }
- 
-.modal-btn{
+
+.modal-btn {
   padding: 1vh 1.5vw;
   border: none;
   outline: none;
@@ -59,35 +59,27 @@
   font-weight: var(--semi-bold);
   font-family: var(--dm-sans);
   cursor: pointer;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   border-radius: 2px;
 }
- 
-.btn-cancelar{
+
+.btn-cancelar {
   background-color: var(--pompeii-ash);
   color: var(--doctor);
 }
- 
-.btn-confirmar{
+
+.btn-confirmar {
   background-color: var(--purplish-blue);
   color: var(--doctor);
 }
- 
- 
-@media screen
- 
-and (min-device-width: 1270px)
-and (max-device-width: 1600px)
- 
-{
 
-  .table{
+@media screen and (min-device-width: 1270px) and (max-device-width: 1600px) {
+  .table {
     width: 90%;
   }
 
-  .modal-excluir-container{
+  .modal-excluir-container {
     min-width: 24vw;
     min-height: 4vh;
   }
 }
- 
