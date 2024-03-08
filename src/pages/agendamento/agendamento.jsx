@@ -10,7 +10,6 @@ import upload from "../../assets/images/upload.svg";
 import asideImage from "../../assets/images/aside-image.svg";
 
 const { Dragger } = Upload;
-const { TextArea } = Input;
 
 export default function Agendamento() {
   const [pNome, setPNome] = useState("");
@@ -98,15 +97,15 @@ export default function Agendamento() {
                 (.pdf, .png, .jpeg, etc.)
               </p>
             </Dragger>
-            <button
-              className="default-button"
+          </div>
+          <button
+              className="agendamento-button"
               onClick={() => {
                 handleEnviar();
               }}
             >
               Enviar Projeto
             </button>
-          </div>
         </div>
       </div>
       <img src={asideImage} alt="" className="aside-image" />

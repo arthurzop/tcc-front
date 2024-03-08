@@ -90,7 +90,7 @@
   color: var(--pompeii-ash);
 }
 
-.default-button {
+.agendamento-button {
   color: var(--doctor);
   background-color: var(--cosmic-cobalt);
   border: none;
@@ -103,15 +103,15 @@
   cursor: pointer;
   align-self: center;
   max-width: 20vw;
-  margin: 5vh 0;
+  margin-bottom: 5vh;
 }
 
-.default-button:hover {
+.agendamento-button:hover {
   background-color: #4436c4;
   transition: all 0.5s;
 }
 
-.default-button:hover:active {
+.agendamento-button:hover:active {
   transform: scale(1.01);
   transition: all 0.1s;
 }
@@ -188,8 +188,25 @@
   background-color: var(--pompeii-ash);
 }
 
-@media (max-width: 1536px) {
-  .agendamento-form-container {
-    gap: 0;
-  }
+@media screen 
+  and (min-device-width: 1270px) 
+  and (max-device-width: 1600px) {
+  
+    .agendamento-button{
+
+    }
+
+    .dragger-container{
+      height: fit-content;
+    }
+
+    .input-container{
+      overflow-y: scroll;
+      height: 60vh;
+      width: 100%;
+      padding: 0 2vw;
+    }
+
+    
 }
+
