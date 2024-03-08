@@ -30,7 +30,7 @@ export default function HeaderSidebar() {
     <div className="hs-container">
       <div className="hs-sidebar-container">
         <div className="hs-logo-container">
-          <h1 className="hs-logo">
+          <h1 className="hs-logo" onClick={() => {nav('/')}}>
             EM <span className="hs-logo-highlight">3D</span>
           </h1>
           <div className="vertical-divider"></div>

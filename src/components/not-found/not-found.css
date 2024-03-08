@@ -6,7 +6,8 @@
     align-items: center;
     justify-content: space-around;
     box-sizing: border-box;
-    background-color: var(--doctor);
+    background-color: var(--washed-black);
+    overflow: hidden;
 }
 
 .nf-info {
@@ -25,12 +26,12 @@
 }
 
 .nf-title {
-    color: var(--washed-black);
+    color: var(--doctor);
     font-size: 7em;
 }
 
 .nf-subtitle {
-    color: var(--antartic-deep);
+    color: var(--icewind-dale);
     font-size: 3em;
     font-weight: var(--regular);
 }
@@ -49,13 +50,13 @@
     position: absolute;
 }
 
-.button2 {
+.nf-btn {
     display: inline-block;
     transition: all 0.2s ease-in;
     position: relative;
     overflow: hidden;
     z-index: 1;
-    color: var(--washed-black);
+    color: var(--antartic-deep);
     padding: 0.7em 1.7em;
     cursor: pointer;
     font-size: 1.5em;
@@ -64,19 +65,19 @@
     background: #e8e8e8;
     border: 1px solid #e8e8e8;
     box-shadow:
-        6px 6px 12px #c5c5c5,
-        -6px -6px 12px #ffffff;
+        6px 6px 12px #131313,
+        -6px -6px 12px #0a0a0a;
     margin-top: 4vh;
 }
 
-.button2:active {
+.nf-btn:active {
     color: #666;
     box-shadow:
-        inset 4px 4px 12px #c5c5c5,
-        inset -4px -4px 12px #ffffff;
+        inset 4px 4px 12px #1f1f1f,
+        inset -4px -4px 12px #444444;
 }
 
-.button2:before {
+.nf-btn:before {
     content: "";
     position: absolute;
     left: 50%;
@@ -91,7 +92,7 @@
     z-index: -1;
 }
 
-.button2:after {
+.nf-btn:after {
     content: "";
     position: absolute;
     left: 55%;
@@ -106,19 +107,36 @@
     z-index: -1;
 }
 
-.button2:hover {
+.nf-btn:hover {
     color: #ffffff;
     border: 1px solid var(--blurstering-blue);
 }
 
-.button2:hover:before {
+.nf-btn:hover:before {
     top: -35%;
     background-color: var(--blurstering-blue);
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
 
-.button2:hover:after {
+.nf-btn:hover:after {
     top: -45%;
     background-color: var(--blurstering-blue);
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.nf-background{
+  animation-name: spin;
+  animation-duration: 100000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+  max-height: 70vh;
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
 }
