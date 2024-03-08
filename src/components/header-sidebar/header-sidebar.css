@@ -177,7 +177,7 @@
 .sub-text:hover {
   border-left: 5px solid var(--purplish-blue);
   background-color: var(--seared-grey);
-  transition: all 0.1s;
+  transition: all .5s;
 }
 
 .hs-sub-container {

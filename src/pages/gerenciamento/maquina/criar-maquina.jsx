@@ -1,10 +1,10 @@
 import HeaderSidebar from "../../../components/header-sidebar/header-sidebar"
-import "./estoque.css"
+import "./maquina.css"
 
-export default function Material() {
+export default function CriarMaquina() {
     return(
         <div className="section-body">
-            <HeaderSidebar/>
-        </div>
+        <HeaderSidebar/>
+    </div>
     )
 }

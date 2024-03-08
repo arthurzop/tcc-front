@@ -11,15 +11,17 @@ import EsqueciSenha from "./pages/login/esqueci-senha";
 import Cadastro from "./pages/login/cadastro";
 import Agendamento from "./pages/agendamento/agendamento";
 import PedidosUsuario from "./pages/pedidos-usuario/pedidos";
-import Estoque from "./pages/gerenciamento/estoque/estoque";
-import Maquina from "./pages/gerenciamento/estoque/maquina";
-import Material from "./pages/gerenciamento/estoque/material";
 import Pedidos from "./pages/gerenciamento/pedidos/pedidos";
 import CriarPerfil from "./pages/gerenciamento/perfis/criar";
 import EditarPerfil from "./pages/gerenciamento/perfis/editar";
 import Perfis from "./pages/gerenciamento/perfis/perfis";
 import Dashboard from './pages/dashboard/dashboard';
 import NotFound from "./components/not-found/not-found";
+import Maquina from "./pages/gerenciamento/maquina/maquina";
+import CriarMaquina from "./pages/gerenciamento/maquina/criar-maquina";
+import CriarMaterial from "./pages/gerenciamento/material/criar-material";
+import Material from './pages/gerenciamento/material/material'
+
 
 
 const router = createBrowserRouter([
@@ -52,15 +54,19 @@ const router = createBrowserRouter([
         element: <PedidosUsuario/>
       },
       {
-        path: "/estoque",
-        element: <Estoque/>
-      },
-      {
         path: '/cadastro de maquina',
-        element: <Maquina/>
+        element: <CriarMaquina/>
       },
       {
         path: '/cadastro de material',
+        element: <CriarMaterial/>
+      },
+      {
+        path: '/maquinas',
+        element: <Maquina/>
+      },
+      {
+        path: '/materiais',
         element: <Material/>
       },
       {

@@ -9,7 +9,8 @@ import pedidos from "../../assets/images/pedidos.svg";
 import calendar from "../../assets/images/calendar.svg";
 import graph from "../../assets/images/graph.svg";
 import settings from "../../assets/images/settings.svg";
-import estoque from '../../assets/images/estoque.svg'
+import material from "../../assets/images/material.svg";
+import maquina from '../../assets/images/maquina.svg'
 import todospedidos from '../../assets/images/todospedidos.svg'
 import perfis from '../../assets/images/perfis.svg'
 import down from '../../assets/images/down.svg'
@@ -30,7 +31,7 @@ export default function HeaderSidebar() {
     <div className="hs-container">
       <div className="hs-sidebar-container">
         <div className="hs-logo-container">
-          <h1 className="hs-logo" onClick={() => {nav('/')}}>
+          <h1 className="hs-logo" onClick={() => { nav('/') }}>
             EM <span className="hs-logo-highlight">3D</span>
           </h1>
           <div className="vertical-divider"></div>
@@ -67,18 +68,22 @@ export default function HeaderSidebar() {
           {subMenuOpen && (
             <>
               <div className="sub-container">
-                <h1 className="sub-text" onClick={() => { nav('/estoque') }}>
-                  <img src={estoque} alt="" />
-                  Estoque
+                <h1 className="sub-text" onClick={() => { nav('/maquinas')}}>
+                  <img src={maquina} alt="" />
+                  Máquinas
                 </h1>
-                <h1 className="sub-text" onClick={() => { nav('/pedidos') }}>
+                <h1 className="sub-text" onClick={() => { nav('/materiais')}}>
+                  <img src={material} alt="" />
+                  Materiais
+                </h1>
+                <h1 className="sub-text" onClick={() => { nav('/pedidos')}}>
                   <img src={todospedidos} alt="" />
                   Pedidos
                 </h1>
-                <h1 className="sub-text" onClick={() => { nav('/pedidos') }}>
+                <h1 className="sub-text" onClick={() => { nav('/perfis')}}>
                   <img src={perfis} alt="" />
                   Perfis
-                </h1>             
+                </h1>
               </div>
             </>
           )}

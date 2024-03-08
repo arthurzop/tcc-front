@@ -6,7 +6,7 @@ import heroBack from '../../assets/images/hero-image-background.svg'
 
 export default function NotFound() {
 
-    const nav = useNavigate
+    const nav = useNavigate()
 
     return (
         <div className="nf-container">
