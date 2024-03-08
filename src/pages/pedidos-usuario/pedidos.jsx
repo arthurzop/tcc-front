@@ -125,6 +125,6 @@ export default function PedidosUsuario() {
           </div>
         </div>
       }
-    </div>
+    </div>  
   );
 }

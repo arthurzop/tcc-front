@@ -104,7 +104,7 @@ export default function HeaderSidebar() {
             }}
             className="hs-active"
           >
-            <Avatar size={50} style={{ background: "darkgreen" }}>
+            <Avatar size={[45, 50]} style={{ background: "darkgreen" }}>
               A
             </Avatar>
           </p>
