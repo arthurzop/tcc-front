@@ -2,18 +2,18 @@ import "./header-sidebar.css";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Avatar } from "antd";
-
-
-import iconSair from "../../assets/images/icon-sair.svg";
-import pedidos from "../../assets/images/pedidos.svg";
-import calendar from "../../assets/images/calendar.svg";
-import graph from "../../assets/images/graph.svg";
-import settings from "../../assets/images/settings.svg";
-import material from "../../assets/images/material.svg";
-import maquina from '../../assets/images/maquina.svg'
-import todospedidos from '../../assets/images/todospedidos.svg'
-import perfis from '../../assets/images/perfis.svg'
-import down from '../../assets/images/down.svg'
+import {
+  IconoirProvider,
+  Calendar,
+  GraphUp,
+  Settings,
+  Printer,
+  BoxIso,
+  TaskList,
+  Community,
+  Page,
+  Home,
+} from "iconoir-react";
 
 export default function HeaderSidebar() {
   const location = useLocation("");
@@ -29,123 +29,159 @@ export default function HeaderSidebar() {
 
   return (
     <div className="hs-container">
-      <div className="hs-sidebar-container">
-        <div className="hs-logo-container">
-          <h1 className="hs-logo" onClick={() => { nav('/') }}>
-            EM <span className="hs-logo-highlight">3D</span>
-          </h1>
-          <div className="vertical-divider"></div>
+      <IconoirProvider
+        iconProps={{
+          color: "#fff",
+          strokeWidth: 1.5,
+          width: "24px",
+          height: "24px",
+        }}
+      >
+        <div className="hs-sidebar-container">
+          <div className="hs-logo-container">
+            <h1
+              className="hs-logo"
+              onClick={() => {
+                nav("/");
+              }}
+            >
+              EM <span className="hs-logo-highlight">3D</span>
+            </h1>
+            <div className="vertical-divider"></div>
+          </div>
+          <div className="horizontal-divider"></div>
+          <div className="hs-sidebar-menu-container">
+            <h1
+              className="hs-menu-item"
+              id="agendamento"
+              onClick={() => {
+                nav("/agendamento");
+              }}
+            >
+              <Calendar />
+              Agendamento
+            </h1>
+            <h1
+              className="hs-menu-item"
+              id="dashboard"
+              onClick={() => {
+                nav("/dashboard");
+              }}
+            >
+              <GraphUp />
+              Dashboard
+            </h1>
+            <h1
+              className="hs-menu-item"
+              id="gerenciamento"
+              onClick={() => {
+                setsubMenuOpen(!subMenuOpen);
+              }}
+            >
+              <Settings />
+              Gerenciamento
+            </h1>
+            {subMenuOpen && (
+              <>
+                <div className="sub-container">
+                  <h1
+                    className="sub-text"
+                    onClick={() => {
+                      nav("/maquinas");
+                    }}
+                  >
+                    <Printer />
+                    Máquinas
+                  </h1>
+                  <h1
+                    className="sub-text"
+                    onClick={() => {
+                      nav("/materiais");
+                    }}
+                  >
+                    <BoxIso />
+                    Materiais
+                  </h1>
+                  <h1
+                    className="sub-text"
+                    onClick={() => {
+                      nav("/pedidos");
+                    }}
+                  >
+                    <TaskList />
+                    Pedidos
+                  </h1>
+                  <h1
+                    className="sub-text"
+                    onClick={() => {
+                      nav("/perfis");
+                    }}
+                  >
+                    <Community />
+                    Perfis
+                  </h1>
+                </div>
+              </>
+            )}
+          </div>
         </div>
-        <div className="horizontal-divider"></div>
-        <div className="hs-sidebar-menu-container">
-          <h1
-            className="hs-menu-item"
-            id="agendamento"
-            onClick={() => {
-              nav("/agendamento");
-            }}
-          >
-            <img src={calendar} alt="" className="svg" />
-            Agendamento
-          </h1>
-          <h1 className="hs-menu-item" id="dashboard" onClick={() => {
-            nav("/dashboard");
-          }}>
-            <img src={graph} alt="" className="svg" />
-            Dashboard
-          </h1>
-          <h1
-            className="hs-menu-item"
-            id="gerenciamento"
-            onClick={() => {
-              setsubMenuOpen(!subMenuOpen);
-            }}
-          >
-            <img src={settings} alt="" className="svg" />
-            Gerenciamento
-            <img src={down} alt="" />
-          </h1>
-          {subMenuOpen && (
-            <>
-              <div className="sub-container">
-                <h1 className="sub-text" onClick={() => { nav('/maquinas')}}>
-                  <img src={maquina} alt="" />
-                  Máquinas
-                </h1>
-                <h1 className="sub-text" onClick={() => { nav('/materiais')}}>
-                  <img src={material} alt="" />
-                  Materiais
-                </h1>
-                <h1 className="sub-text" onClick={() => { nav('/pedidos')}}>
-                  <img src={todospedidos} alt="" />
-                  Pedidos
-                </h1>
-                <h1 className="sub-text" onClick={() => { nav('/perfis')}}>
-                  <img src={perfis} alt="" />
-                  Perfis
-                </h1>
-              </div>
-            </>
-          )}
+        <div className="hs-header">
+          <div className="hs-header-container">
+            <h1 className="hs-title">
+              {pathname}
+              <span className="hs-subtitle">
+                {location.pathname.split("/")[2]}
+              </span>
+            </h1>
+            <p
+              onClick={() => {
+                setMenuOpen(!menuOpen);
+              }}
+              className="hs-active"
+            >
+              <Avatar size={{sm: 40, xl: 50}} style={{ background: "darkgreen" }}>
+                A
+              </Avatar>
+            </p>
+          </div>
         </div>
-
-      </div>
-      <div className="hs-header">
-        <div className="hs-header-container">
-          <h1 className="hs-title">
-            {pathname}
-            <span className="hs-subtitle">
-              {location.pathname.split("/")[2]}
-            </span>
-          </h1>
-          <p
-            onClick={() => {
-              setMenuOpen(!menuOpen);
-            }}
-            className="hs-active"
-          >
-            <Avatar size={[45, 50]} style={{ background: "darkgreen" }}>
-              A
-            </Avatar>
-          </p>
-        </div>
-      </div>
-      {menuOpen && (
-        <>
-          <div
-            className="hs-overlay"
-            onClick={() => {
-              setMenuOpen(false);
-            }}
-          ></div>
-          <div className="hs-modal-container">
-            <h1 className="modal-name">Manuela Vaz</h1>
-            <h3 className="modal-cargo">Admin</h3>
-            <div className="modal-divider"></div>
-            <div className="modal-sair-container">
-              <div
-                className="hs-sub-container"
-                onClick={() => {
-                  nav("/meus pedidos");
-                }}
-              >
-                <img src={pedidos} alt="" className="modal-icon" />
-                <h1 className="modal-text">Meus Pedidos</h1>
-              </div>
-              <div className="sub-divider"></div>
-              <div
-                className="hs-sub-container"
-                onClick={() => {
-                  nav("/login");
-                }}
-              >
-                <img src={iconSair} alt="" className="modal-icon" />
-                <h1 className="modal-text">Sair</h1>
+        {menuOpen && (
+          <>
+            <div
+              className="hs-overlay"
+              onClick={() => {
+                setMenuOpen(false);
+              }}
+            ></div>
+            <div className="hs-modal-container">
+              <h1 className="modal-name">Manuela Vaz</h1>
+              <h3 className="modal-cargo">Admin</h3>
+              <div className="modal-divider"></div>
+              <div className="modal-sair-container">
+                <div
+                  className="hs-sub-container"
+                  onClick={() => {
+                    nav("/meus pedidos");
+                  }}
+                >
+                  <Page />
+                  <h1 className="modal-text">Meus Pedidos</h1>
+                </div>
+                <div className="sub-divider"></div>
+                <div
+                  className="hs-sub-container"
+                  onClick={() => {
+                    nav("/login");
+                  }}
+                >
+                  <Home />
+                  <h1 className="modal-text">Sair</h1>
+                </div>
               </div>
             </div>
-          </div>
-        </>
-      )}
+          </>
+        )}
+      </IconoirProvider>
     </div>
   );
 }

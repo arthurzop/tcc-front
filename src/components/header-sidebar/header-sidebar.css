@@ -85,8 +85,11 @@
   cursor: pointer;
   user-select: none;
   display: flex;
+  align-items: center;
+  justify-content: start;
   gap: 1vw;
 }
+
 
 .hs-menu-item:hover {
   border-left: 6px solid var(--purplish-blue);
@@ -134,7 +137,7 @@
 }
 
 .modal-text {
-  font-weight: var(--semi-bold);
+  font-weight: var(--regular);
   font-size: 1.6em;
 }
 
@@ -183,6 +186,7 @@
 
 .hs-sub-container {
   display: flex;
+  align-items: center;
   width: 90%;
   gap: 1vw;
   text-wrap: nowrap;
