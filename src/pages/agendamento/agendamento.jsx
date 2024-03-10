@@ -5,6 +5,7 @@ import DatePicker from "react-widgets/DatePicker";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import { Input, Upload } from "antd";
 import { useState } from "react";
+import {CloudUpload} from "iconoir-react"
 
 import upload from "../../assets/images/upload.svg";
 import asideImage from "../../assets/images/aside-image.svg";
@@ -89,7 +90,7 @@ export default function Agendamento() {
             />
             <p className="label">Escolha o arquivo:</p>
             <Dragger className="dragger-container">
-              <img src={upload} alt="" />
+             <Upload/>
               <h2 className="dragger-text">Arraste e solte o arquivo.</h2>
               <p className="dragger-info">
                 Envie um arquivo que mostre claramente o que deseja imprimir, em
