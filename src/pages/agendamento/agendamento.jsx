@@ -1,9 +1,9 @@
 import "./agendamento.css";
 import HeaderSidebar from "../../components/header-sidebar/header-sidebar";
 import "react-widgets/styles.css";
-import DatePicker from "react-widgets/DatePicker";
+// import DatePicker from "react-widgets/DatePicker";
 import { Bounce, ToastContainer, toast } from "react-toastify";
-import { Input, Upload } from "antd";
+import { Input, Upload, DatePicker } from "antd";
 import { useState } from "react";
 import {CloudUpload} from "iconoir-react"
 
@@ -71,10 +71,11 @@ export default function Agendamento() {
               </div>
               <div className="datetime-sub-container">
                 <p className="label">Tempo estimado de impressão: </p>
-                <input
-                  type="time"
+                <Input
                   className="timepicker"
+                  type="time"
                   onChange={(e) => setPTempo(e.target.value)}
+                  
                 />
               </div>
             </div>
@@ -90,7 +91,7 @@ export default function Agendamento() {
             />
             <p className="label">Escolha o arquivo:</p>
             <Dragger className="dragger-container">
-             <Upload/>
+             <CloudUpload/>
               <h2 className="dragger-text">Arraste e solte o arquivo.</h2>
               <p className="dragger-info">
                 Envie um arquivo que mostre claramente o que deseja imprimir, em
@@ -109,7 +110,7 @@ export default function Agendamento() {
             </button>
         </div>
       </div>
-      <img src={asideImage} alt="" className="aside-image" />
+      {/* <img src={asideImage} alt="" className="aside-image" /> */}
     </div>
   );
 }

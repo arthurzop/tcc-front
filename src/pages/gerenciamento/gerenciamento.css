@@ -1,3 +1,5 @@
+
+
 .pedidos-title {
   font-size: 2em;
   margin: 1vh 2vw;
@@ -5,15 +7,14 @@
 }
 
 .table-container {
-  width: 150%;
+  width: 85%;
   height: 80vh;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
 .table {
-  margin-top: 5vh;
+  margin: 5vh 1vw;
 }
 
 .modal-excluir-container {
@@ -72,6 +73,17 @@
   background-color: var(--purplish-blue);
   color: var(--doctor);
 }
+
+.top-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.maq-btn{
+
+}
+
 
 @media screen and (min-device-width: 1270px) and (max-device-width: 1600px) {
   .table {

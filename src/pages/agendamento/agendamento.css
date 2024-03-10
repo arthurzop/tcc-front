@@ -4,13 +4,13 @@
   font-family: var(--dm-sans);
   overflow: hidden;
   position: relative;
+  width: 100%;
 }
 
 .section-container {
-  position: absolute;
   margin: 12vh 0vw 0vh 15vw;
   padding: 2vh;
-  width: 58%;
+  display: flex;
 }
 
 .agendamento-form-container {
@@ -18,7 +18,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  
   gap: 4vh;
 }
 
@@ -28,7 +27,7 @@
 }
 
 .input-container {
-  width: 80%;
+  width: 60%;
   display: flex;
   flex-direction: column;
 }
@@ -60,17 +59,6 @@
   width: 100%;
 }
 
-.timepicker {
-  width: 100%;
-  height: 4vh;
-  outline: none;
-  border: 1px solid var(--cloud-cover);
-  border-radius: 5px;
-
-  font-size: 1.3em;
-  color: var(--pompeii-ash);
-  padding-inline-start: 1vw;
-}
 
 .antd-input,
 .timepicker {

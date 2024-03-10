@@ -88,7 +88,10 @@ export default function Maquina() {
     <div className="section-body">
       <HeaderSidebar />
       <div className="section-container">
-        <h1 className="pedidos-title">{pathname}</h1>
+        <div className="top-container">
+          <h1 className="pedidos-title">{pathname}</h1>
+          <button>Adicionar Maquina</button>
+        </div>
         <div className="table-container">
           <Table
             className="table"
