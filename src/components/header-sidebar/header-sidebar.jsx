@@ -1,19 +1,7 @@
 import "./header-sidebar.css";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Avatar } from "antd";
-import {
-  IconoirProvider,
-  Calendar,
-  GraphUp,
-  Settings,
-  Printer,
-  BoxIso,
-  TaskList,
-  Community,
-  Page,
-  Home,
-} from "iconoir-react";
+import * as I from 'iconoir-react'
 
 export default function HeaderSidebar() {
   const location = useLocation("");
@@ -29,7 +17,7 @@ export default function HeaderSidebar() {
 
   return (
     <div className="hs-container">
-      <IconoirProvider
+      <I.IconoirProvider
         iconProps={{
           color: "#fff",
           strokeWidth: 1.5,
@@ -58,7 +46,7 @@ export default function HeaderSidebar() {
                 nav("/agendamento");
               }}
             >
-              <Calendar />
+              <I.Calendar />
               Agendamento
             </h1>
             <h1
@@ -68,7 +56,7 @@ export default function HeaderSidebar() {
                 nav("/dashboard");
               }}
             >
-              <GraphUp />
+              <I.GraphUp />
               Dashboard
             </h1>
             <h1
@@ -78,7 +66,7 @@ export default function HeaderSidebar() {
                 setsubMenuOpen(!subMenuOpen);
               }}
             >
-              <Settings />
+              <I.Settings />
               Gerenciamento
             </h1>
             {subMenuOpen && (
@@ -90,7 +78,7 @@ export default function HeaderSidebar() {
                       nav("/maquinas");
                     }}
                   >
-                    <Printer />
+                    <I.Printer />
                     Máquinas
                   </h1>
                   <h1
@@ -99,7 +87,7 @@ export default function HeaderSidebar() {
                       nav("/materiais");
                     }}
                   >
-                    <BoxIso />
+                    <I.BoxIso />
                     Materiais
                   </h1>
                   <h1
@@ -108,7 +96,7 @@ export default function HeaderSidebar() {
                       nav("/pedidos");
                     }}
                   >
-                    <TaskList />
+                    <I.TaskList />
                     Pedidos
                   </h1>
                   <h1
@@ -117,7 +105,7 @@ export default function HeaderSidebar() {
                       nav("/perfis");
                     }}
                   >
-                    <Community />
+                    <I.Community />
                     Perfis
                   </h1>
                 </div>
@@ -139,9 +127,6 @@ export default function HeaderSidebar() {
               }}
               className="hs-active"
             >
-              <Avatar size={{sm: 40, xl: 50}} style={{ background: "darkgreen" }}>
-                A
-              </Avatar>
             </p>
           </div>
         </div>
@@ -164,7 +149,7 @@ export default function HeaderSidebar() {
                     nav("/meus pedidos");
                   }}
                 >
-                  <Page />
+                  <I.Page />
                   <h1 className="modal-text">Meus Pedidos</h1>
                 </div>
                 <div className="sub-divider"></div>
@@ -174,14 +159,14 @@ export default function HeaderSidebar() {
                     nav("/login");
                   }}
                 >
-                  <Home />
+                  <I.Home />
                   <h1 className="modal-text">Sair</h1>
                 </div>
               </div>
             </div>
           </>
         )}
-      </IconoirProvider>
+      </I.IconoirProvider>
     </div>
   );
 }

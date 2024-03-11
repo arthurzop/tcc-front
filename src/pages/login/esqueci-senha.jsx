@@ -1,5 +1,4 @@
 import "./login.css"
-import { Form, Input } from "antd";
 import HeaderLogin from "../../components/header-login/header-login";
 import { useNavigate } from "react-router-dom";
 
@@ -14,18 +13,18 @@ export default function EsqueciSenha() {
         <div className="aside-sub-container">
           <h1 className="login-title">Esqueceu a <br /> sua senha?</h1>
           <div className="esqueci-container">
-            <Form
+            <div
               className="esqueci-form"
             >
               <label htmlFor="email">Email: </label>
-              <Form.Item className="form-label" >
-                <Input
+              <div className="form-label" >
+                <input
                   className="login-input"
                   placeholder="Digite seu email de recuperação:"
                   allowClear
                 />
-              </Form.Item>
-            </Form>
+              </div>
+            </div>
           </div>
           <button className="login-button">Enviar Email</button>
         </div>

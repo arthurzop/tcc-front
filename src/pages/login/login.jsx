@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import "./login.css";
 import "../../App.css";
-import { Form, Input } from "antd";
 
 import HeaderLogin from "../../components/header-login/header-login";
 import { useNavigate } from "react-router-dom";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function Login(props) {
+export default function Login() {
 
   const nav = useNavigate()
 
@@ -45,33 +44,33 @@ export default function Login(props) {
       <aside className="login-sidebar">
         <div className="form-container">
           <h1 className="login-title">Login</h1>
-          <Form
+          <div
             className="form"
           >
             <div className="login-input-container">
               <label htmlFor="email">Email: </label>
-              <Form.Item className="form-label" >
-                <Input
+              <div className="form-label" >
+                <input
                   className="login-input"
                   placeholder="Digite seu email:"
                   allowClear
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
-              </Form.Item>
+              </div>
             </div>
             <div className="login-input-container">
               <label htmlFor="senha">Senha: </label>
-              <Form.Item className="form-label">
-                <Input.Password
+              <div className="form-label">
+                <input
                   className="login-input"
                   placeholder="••••••••••"
                   onChange={(e) => setSenha(e)}
                 />
                 <a href="javascript:void(0)" className="esqueci-senha" onClick={() => { nav("/esqueciSenha") }}>Esqueci a senha</a>
-              </Form.Item>
+              </div>
             </div>
-          </Form>
+          </div>
           <button className="login-button" onClick={() => handleLogin()}>Entrar</button>
 
         </div>

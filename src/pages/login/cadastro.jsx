@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import "./login.css";
 import "../../App.css";
-import { Form, Input } from "antd";
 
 import HeaderLogin from "../../components/header-login/header-login";
-import Select from "react-select";
-import { Bounce, ToastContainer, toast } from "react-toastify";
+import { Bounce, ToastContainer } from "react-toastify";
 
 export default function Cadastro() {
   const [cargo, setCargo] = useState("");
@@ -43,29 +41,29 @@ export default function Cadastro() {
       <aside className="login-sidebar">
         <h1 className="login-title">Cadastro</h1>
         <div className="cadastro-container">
-          <Form className="cadastro-form">
-            <Form.Item className="form-label">
+          <div className="cadastro-form">
+            <div className="form-label">
               <label htmlFor="email">Nome: </label>
-              <Input
+              <input
                 className="cadastro-input"
                 placeholder="Digite seu nome:"
                 allowClear
                 onChange={(e) => setNome(e.target.value)}
               />
-            </Form.Item>
+            </div>
 
-            <Form.Item className="form-label">
+            <div className="form-label">
               <label htmlFor="email">Email: </label>
-              <Input
+              <input
                 className="cadastro-input"
                 placeholder="Digite seu email:"
                 allowClear
                 onChange={(e) => setEmail(e.target.value)}
               />
-            </Form.Item>
-            <Form.Item className="form-label">
+            </div>
+            <div className="form-label">
               <label htmlFor="email">Cargo: </label>
-              <Select
+              <select
                 options={opcoes}
                 isClearable
                 isSearchable
@@ -73,27 +71,27 @@ export default function Cadastro() {
                 onChange={(e) => setCargo(e.target.value)}
                 className="cadastro-input"
               />
-            </Form.Item>
+            </div>
 
-            <Form.Item className="form-label">
+            <div className="form-label">
               <label htmlFor="email">Sala: </label>
-              <Input
+              <input
                 className="cadastro-input"
                 placeholder="Digite seu email:"
                 allowClear
                 onChange={(e) => setSala(e.target.value)}
               />
-            </Form.Item>
+            </div>
 
-            <Form.Item className="form-label">
+            <div className="form-label">
               <label htmlFor="senha">Senha: </label>
-              <Input.Password
+              <input
                 className="cadastro-input"
                 placeholder="••••••••••"
                 onChange={(e) => setSenha(e.target.value)}
               />
-            </Form.Item>
-          </Form>
+            </div>
+          </div>
         </div>
         <button
           className="login-button"
