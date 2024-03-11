@@ -1,11 +1,12 @@
 import "./login.css"
 import HeaderLogin from "../../components/header-login/header-login";
 import { useNavigate } from "react-router-dom";
-
+import * as M from "@mui/material"
 
 export default function EsqueciSenha() {
 
   const nav = useNavigate()
+
   return (
     <body className="body">
       <HeaderLogin />
@@ -18,10 +19,11 @@ export default function EsqueciSenha() {
             >
               <label htmlFor="email">Email: </label>
               <div className="form-label" >
-                <input
+                <M.TextField
                   className="login-input"
                   placeholder="Digite seu email de recuperação:"
-                  allowClear
+                  sx={{ input: { color: "white" } }}
+
                 />
               </div>
             </div>

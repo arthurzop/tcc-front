@@ -21,7 +21,6 @@
   width: 22vw;
   height: 100vh;
   align-self: flex-end;
-  background: rgb(33, 37, 41);
   background-color: var(--washed-black);
   padding: 2vh;
   display: flex;
@@ -85,6 +84,11 @@ label{
   padding: .8vh;
   color: var(--antartic-deep);
   width: 100%;
+}
+
+.login-input-container{
+  display: flex;
+  flex-direction: column;
 }
 
 .esqueci-senha{
@@ -160,6 +164,11 @@ label{
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 2vh;
+}
+
+.cadastro-input{
+  color: var(--doctor);
 }
 
 @media screen 
@@ -195,8 +204,6 @@ label{
     gap: 0;
   }
 
-  .cadastro-input{
-  }
 
   .label{
     font-size: 1em;
