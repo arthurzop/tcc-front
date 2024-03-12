@@ -1,17 +1,17 @@
 import "./agendamento.css";
 import HeaderSidebar from "../../components/header-sidebar/header-sidebar";
 import "react-widgets/styles.css";
-import DatePicker from "react-widgets/DatePicker";
+// import DatePicker from "react-widgets/DatePicker";
 import { Bounce, ToastContainer, toast } from "react-toastify";
-import { Input, Upload } from "antd";
 import { useState } from "react";
+import * as I from 'iconoir-react'
+import * as M from "@mui/material"
+import * as X from "@mui/x-date-pickers"
+import { Input, Upload } from 'antd'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { MuiFileInput } from 'mui-file-input'
 
-import upload from "../../assets/images/upload.svg";
-import asideImage from "../../assets/images/aside-image.svg";
-
-const { Dragger } = Upload;
-const { TextArea } = Input;
-
+const {Dragger} = Upload
 export default function Agendamento() {
   const [pNome, setPNome] = useState("");
   const [pData, setPData] = useState("");
@@ -26,14 +26,17 @@ export default function Agendamento() {
   };
 
   const handleEnviar = async () => {
-    if (pNome === "" || pData === "" || pTempo === "" || pDescricao === "") {
+    if (pNome === "" || pTempo === "" || pDescricao === "") {
       console.log(pNome, pData, pTempo, pDescricao);
       toast.warn("Preencha todos os campos");
     } else {
+      toast.success("Enviado com sucesso!")
+      setNull()
     }
   };
 
   return (
+    <X.LocalizationProvider dateAdapter={AdapterDayjs}>
     <div className="section-body"> 
       <ToastContainer
         position="bottom-right"
@@ -51,63 +54,43 @@ export default function Agendamento() {
           <h1 className="section-title">Agende a Impressão</h1>
           <div className="input-container">
             <p className="label">Nome do Projeto: </p>
-            <Input
-              placeholder="Ex: Peça para apoio de celular."
-              className="antd-input"
-              allowClear
-              maxLength={110}
-              onChange={(e) => setPNome(e.target.value)}
-            />
+            
+            <M.TextField variant="outlined" label="Nome"/>
             <div className="datetime-container">
               <div className="datetime-sub-container">
                 <p className="label">Escolha a data: </p>
-                <DatePicker
-                  placeholder="dd/mm/aaaa"
-                  className="datepicker"
-                  onChange={(e) => setPData(e.target.value)}
-                />
+                <X.DatePicker></X.DatePicker>
               </div>
               <div className="datetime-sub-container">
                 <p className="label">Tempo estimado de impressão: </p>
-                <input
-                  type="time"
-                  className="timepicker"
-                  onChange={(e) => setPTempo(e.target.value)}
-                />
+                <X.TimePicker views={['hours', 'minutes']} format="hh:mm"></X.TimePicker>
               </div>
             </div>
             <p className="label">Descrição do Projeto:</p>
-            <Input
-              allowClear
-              rows={3}
-              maxLength={100}
-              showCount
-              placeholder="Escreva uma breve descrição do projeto:"
-              className="antd-input"
-              onChange={(e) => setPDescricao(e.target.value)}
-            />
+            <M.TextField multiline minRows={2} maxRows={4}></M.TextField>
             <p className="label">Escolha o arquivo:</p>
-            <Dragger className="dragger-container">
-              <img src={upload} alt="" />
-              <h2 className="dragger-text">Arraste e solte o arquivo.</h2>
-              <p className="dragger-info">
-                Envie um arquivo que mostre claramente o que deseja imprimir, em
-                formato pdf ou imagem. <br />
-                (.pdf, .png, .jpeg, etc.)
-              </p>
-            </Dragger>
-            <button
-              className="default-button"
+              <Dragger className="dragger-container">
+                <I.CloudUpload/>
+                <h2 className="dragger-text">Arraste e solte o arquivo.</h2>
+                <p className="dragger-info">
+                  Envie um arquivo que mostre claramente o que deseja imprimir, em
+                  formato pdf ou imagem. <br />
+                  (.pdf, .png, .jpeg, etc.)
+                </p>
+              </Dragger>
+          </div>
+          <button
+              className="system-btn"
               onClick={() => {
                 handleEnviar();
               }}
             >
               Enviar Projeto
             </button>
-          </div>
         </div>
       </div>
-      <img src={asideImage} alt="" className="aside-image" />
+      {/* <img src={asideImage} alt="" className="aside-image" /> */}
     </div>
+    </X.LocalizationProvider>
   );
 }
