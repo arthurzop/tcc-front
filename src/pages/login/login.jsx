@@ -35,14 +35,10 @@ export default function Login(props) {
         position="bottom-right"
         autoClose={3000}
         limit={1}
-        hideProgressBar={false}
-        newestOnTop
         closeOnClick
-        pauseOnFocusLoss
         draggable
         pauseOnHover={false}
         transition={Bounce}
-        theme="dark"
         />
 
       <HeaderLogin />

@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Reem+Kufi+Ink&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Reem+Kufi+Ink&display=swap");
 
-:root{
+:root {
   /* variavel das fontes */
-  --dm-sans: 'DM Sans', sans-serif;
-  --reem-kufi: 'Reem Kufi Ink', sans-serif;
+  --dm-sans: "DM Sans", sans-serif;
+  --reem-kufi: "Reem Kufi Ink", sans-serif;
 
-   /* variavel de fonte weight do DM Sans */
+  /* variavel de fonte weight do DM Sans */
 
   --extra-light: 200;
   --light: 300;
@@ -15,22 +15,22 @@
   --bold: 700;
   --extra-bold: 800;
   --black: 900;
-  
+
   /* variável pras cores */
   --cosmic-cobalt: #312787;
-	--purplish-blue: #5a48f9;
-	--blurstering-blue: #4318ff;
-	--shy-moment: #aaa1ff;
-	--mild-blue-yonder: #a3aed0;
-	--washed-black: #212529;
-	--antartic-deep: #343a40;
-	--seared-grey: #495057;
-	--pompeii-ash: #6c757d;
-	--cloud-cover: #adb5bd;
-	--sadin-white: #ced4da;
-	--birght-star: #dee2e6;
-	--icewind-dale: #e9ecef;
-	--doctor: #f8f9fa;
+  --purplish-blue: #5a48f9;
+  --blurstering-blue: #4318ff;
+  --shy-moment: #aaa1ff;
+  --mild-blue-yonder: #a3aed0;
+  --washed-black: #212529;
+  --antartic-deep: #343a40;
+  --seared-grey: #495057;
+  --pompeii-ash: #6c757d;
+  --cloud-cover: #adb5bd;
+  --sadin-white: #ced4da;
+  --birght-star: #dee2e6;
+  --icewind-dale: #e9ecef;
+  --doctor: #f8f9fa;
 
   /* outras variáveis */
   --header-background: rgba(33, 37, 41, 0.9);
@@ -70,17 +70,81 @@
   background-color: var(--washed-black);
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   outline: none;
   scroll-behavior: smooth;
-  transition: .5s;
+  transition: 0.5s;
 }
 
-img{
+img {
   user-select: none;
 }
 
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
 
+.spinner {
+  position: relative;
+  width: 33.6px;
+  height: 33.6px;
+  perspective: 67.2px;
+}
+
+.spinner div {
+  width: 100%;
+  height: 100%;
+  background: var(--cosmic-cobalt);
+  position: absolute;
+  left: 50%;
+  transform-origin: left;
+  animation: spinner-16s03x 2s infinite;
+}
+
+.spinner div:nth-child(1) {
+  animation-delay: 0.15s;
+  background: var(--cosmic-cobalt);
+}
+
+.spinner div:nth-child(2) {
+  animation-delay: 0.3s;
+  background: var(--blurstering-blue);
+}
+
+.spinner div:nth-child(3) {
+  animation-delay: 0.45s;
+  background: var(--purplish-blue);
+}
+
+.spinner div:nth-child(4) {
+  animation-delay: 0.6s;
+  background: var(--shy-moment);
+}
+
+.spinner div:nth-child(5) {
+  animation-delay: 0.75s;
+}
+
+@keyframes spinner-16s03x {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  50%,
+  80% {
+    transform: rotateY(-180deg);
+  }
+
+  90%,
+  100% {
+    opacity: 0;
+    transform: rotateY(-180deg);
+  }
+}
