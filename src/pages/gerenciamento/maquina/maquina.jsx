@@ -1,6 +1,4 @@
 import HeaderSidebar from "../../../components/header-sidebar/header-sidebar";
-import "./maquina.css";
-import crudDelete from "../../../assets/images/crud.svg";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import * as M from "@mui/material";

@@ -2,6 +2,7 @@ import "./header-sidebar.css";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import * as I from 'iconoir-react'
+import { Avatar } from "@mui/material";
 
 export default function HeaderSidebar() {
   const location = useLocation("");
@@ -128,6 +129,7 @@ export default function HeaderSidebar() {
               }}
               className="hs-active"
             >
+              <Avatar>A</Avatar>
             </p>
           </div>
         </div>

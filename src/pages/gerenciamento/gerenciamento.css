@@ -98,6 +98,52 @@
   background-color: #3511d8;
 }
 
+.cadastrar-container{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 80vh;
+  justify-content: space-around;
+  align-items: center;
+  gap: 4vh;
+}
+
+.maquina{
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+.cadastrar-column{
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+  width: 40%;
+}
+
+.cadastrar-input{
+  width: 40%;
+}
+
+.cadastrar-title{
+  font-size: 2.5em;
+}
+
+.cadastrar-label{
+  margin-bottom: .5vh;
+  font-size: 1.1em;
+}
+
+.cadastrar-btn{
+  margin: 2vh;
+  width: 20%;
+}
+
+.cadastrar-dragger{
+  height: 100%;
+}
+
 
 @media screen and (min-device-width: 1270px) and (max-device-width: 1600px) {
   .table {

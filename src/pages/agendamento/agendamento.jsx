@@ -7,9 +7,8 @@ import { useState } from "react";
 import * as I from 'iconoir-react'
 import * as M from "@mui/material"
 import * as X from "@mui/x-date-pickers"
-import { Input, Upload } from 'antd'
+  import { Upload } from 'antd'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { MuiFileInput } from 'mui-file-input'
 
 const {Dragger} = Upload
 export default function Agendamento() {
