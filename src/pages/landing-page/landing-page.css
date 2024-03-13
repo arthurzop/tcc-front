@@ -354,7 +354,7 @@ main {
 
 .tutorial-divider {
   width: 50%;
-  border: solid .5px var(--pompeii-ash);
+  border: solid 0.5px var(--pompeii-ash);
 }
 
 .tutorial-divider-up {
@@ -472,40 +472,39 @@ footer {
   font-weight: var(--regular);
 }
 
-@media screen 
-  and (min-device-width: 1270px) 
-  and (max-device-width: 1600px) {
+@media screen and (min-device-width: 1270px) and (max-device-width: 1600px) {
   main {
     width: 100%;
   }
 
   .hero-container {
     margin: 0 5vw;
-    
+    justify-content: space-around;
   }
 
-  .hero-title{
-    font-size: 4em;
+  .hero-title {
+    font-size: 4.6em;
   }
 
-  .hero-image{
-    width: 500px;
+  .hero-image {
+    width: 600px;
   }
 
-  .hero-button{
+  .hero-button {
     text-transform: none;
     padding: 2vh 3vw;
+    font-weight: var(--semi-bold);
   }
-  
-  .sobre-container{
+
+  .sobre-container {
     width: 100%;
   }
 
-  .sobre-text{
+  .sobre-text {
     font-size: 2em;
   }
 
-  .sobre-image{
+  .sobre-image {
     height: 200px;
   }
 }

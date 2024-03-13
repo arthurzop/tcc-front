@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-import "./perfis.css"
 
-export default function CriarPerfil(){
-    return(
-        <>
-        </>
-=======
 import HeaderSidebar from "../../../components/header-sidebar/header-sidebar"
 import * as M from '@mui/material'
 
@@ -70,6 +63,5 @@ export default function CriarPerfil() {
                 </div>
             </div>
         </div>
->>>>>>> 44abc2387da2555830772d954ca7f3cd66085d01
     )
 }

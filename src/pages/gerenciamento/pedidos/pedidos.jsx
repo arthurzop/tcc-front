@@ -1,13 +1,4 @@
-<<<<<<< HEAD
-import "./pedidos.css"
 
-export default function Pedidos(){
-    return(
-        <>
-        </>
-    )
-}
-=======
 import HeaderSidebar from "../../../components/header-sidebar/header-sidebar";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -135,4 +126,3 @@ export default function Pedidos() {
     </div>
   );
 }
->>>>>>> 44abc2387da2555830772d954ca7f3cd66085d01
