@@ -5,7 +5,6 @@
   color: var(--doctor);
   display: flex;
   box-sizing: border-box;
-  z-index: 0;
 }
 
 .hs-header {
@@ -99,21 +98,19 @@
 
 .hs-modal-container {
   position: absolute;
-  z-index: 4;
   right: 6%;
-  top: 0;
-  
+  top: 10%;
   background-color: var(--washed-black);
   display: flex;
   flex-direction: column;
-  gap: 2vh;
-  padding: 5vh;
-  /* border: 2px solid var(--purplish-blue); */
-  
+  padding: 3vh;
+  z-index: 100;  
 }
 
 .modal-cargo {
   color: var(--sadin-white);
+  font-weight: var(--regular);
+  margin-bottom: 1vh;
 }
 
 .modal-divider {
@@ -130,11 +127,18 @@
   height: 100%;
   gap: 1vw;
   cursor: pointer;
+  margin-top: 2vh;
 }
 
 .modal-text {
   font-weight: var(--regular);
   font-size: 1.6em;
+  cursor: pointer;
+}
+
+.hs-sub-container:hover{
+  transform: scale(1.05);
+  transition: all .9s;
 }
 
 .hs-overlay {

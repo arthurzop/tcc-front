@@ -23,7 +23,6 @@ export default function EsqueciSenha() {
                   className="login-input"
                   placeholder="Digite seu email de recuperação:"
                   sx={{ input: { color: "white" } }}
-
                 />
               </div>
             </div>

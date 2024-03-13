@@ -136,8 +136,8 @@ export default function HeaderSidebar() {
         {menuOpen && (
           <>
             <div className="hs-modal-container">
-              <h1 className="modal-name">Otávio Ribeiro</h1>
-              <h3 className="modal-cargo">Admin</h3>
+              <h1 className="modal-name">Nome Sobrenome</h1>
+              <h3 className="modal-cargo">Cargo</h3>
               <div className="modal-divider"></div>
               <div className="modal-sair-container">
                 <div
@@ -153,7 +153,7 @@ export default function HeaderSidebar() {
                 <div
                   className="hs-sub-container"
                   onClick={() => {
-                    nav("/login");
+                    nav("/meus pedidos");
                   }}
                 >
                   <I.Home />
