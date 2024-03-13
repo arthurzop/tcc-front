@@ -22,6 +22,7 @@
   background-color: var(--washed-black);
   height: 10vh;
   width: 15vw;
+  cursor: pointer;
 }
 
 .hs-logo {
@@ -72,44 +73,44 @@
 .hs-sidebar-menu-container {
   display: flex;
   flex-direction: column;
-  height: 40%;
-  justify-content: space-around;
+  height: 100%;
+  padding: 2vh 0;
+  background-color: var(--washed-black);
 }
 
 .hs-menu-item {
-  font-size: 1.8em;
+  font-size: 1.5em;
   font-weight: var(--regular);
   padding: 2vh;
-  border-radius: 5px;
   cursor: pointer;
   user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1vw;
 }
 
 .hs-menu-item:hover {
-  box-shadow: 0px 0px 5px 0px #000000;
-  background-color: var(--cosmic-cobalt);
+  border-left: 6px solid var(--purplish-blue);
+  transition: 0.1s;
+  background-color: var(--antartic-deep);
 }
 
 .hs-modal-container {
-  height: fit-content;
-  width: 300px;
-  background-color: var(--header-background);
-  border-radius: 10px;
-  border-top-right-radius: 0px;
+  position: absolute;
+  right: 6%;
+  top: 10%;
+  background-color: var(--washed-black);
   display: flex;
   flex-direction: column;
-  padding: 2vh;
-  position: absolute;
-  right: 0;
-  margin-top: 11vh;
-  margin-right: 3vw;
-  box-shadow: 0px 0px 5px 0px #000000;
-  gap: 1vh;
-  z-index: 2;
+  padding: 3vh;
+  z-index: 100;  
 }
 
 .modal-cargo {
   color: var(--sadin-white);
+  font-weight: var(--regular);
+  margin-bottom: 1vh;
 }
 
 .modal-divider {
@@ -126,11 +127,18 @@
   height: 100%;
   gap: 1vw;
   cursor: pointer;
+  margin-top: 2vh;
 }
 
 .modal-text {
-  font-weight: var(--semi-bold);
+  font-weight: var(--regular);
   font-size: 1.6em;
+  cursor: pointer;
+}
+
+.hs-sub-container:hover{
+  transform: scale(1.05);
+  transition: all .9s;
 }
 
 .hs-overlay {
@@ -141,7 +149,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.226);
   cursor: pointer;
-  z-index: 1;
+  
 }
 
 .hs-active {
@@ -154,36 +162,33 @@
 }
 
 .sub-container {
-  height: fit-content;
-  width: 250px;
-  background-color: var(--header-background);
-  border-radius: 10px;
-  border-top-left-radius: 0px;
-  box-shadow: 0px 0px 5px 0px #000000;
+  color: var(--doctor);
 
+  width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 2vh;
-  gap: 1vh;
-
-  position: absolute;
-  left: 15.5%;
-  top: 42%;
-  z-index: 2;
+  font-size: 0.8em;
 }
 
 .sub-text {
   font-weight: var(--regular);
   cursor: pointer;
-  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  padding: 1.5vh 3vw;
+  width: 100%;
 }
 
 .sub-text:hover {
-  background-color: var(--antartic-deep);
+  border-left: 5px solid var(--purplish-blue);
+  background-color: var(--seared-grey);
+  transition: all 0.5s;
 }
 
 .hs-sub-container {
   display: flex;
+  align-items: center;
   width: 90%;
   gap: 1vw;
   text-wrap: nowrap;
@@ -194,8 +199,29 @@
   border: 1px solid var(--antartic-deep);
 }
 
-@media (max-width: 1536px) {
+@media screen and (min-device-width: 1270px) and (max-device-width: 1600px) {
+  .hs-logo {
+    font-size: 2.5em;
+  }
+
+  .hs-title {
+    font-size: 2em;
+  }
+
   .hs-menu-item {
-    font-size: 1.6em;
+    font-size: 0.8em;
+    align-items: center;
+  }
+
+  .modal-name {
+    font-size: 1.8em;
+  }
+
+  .modal-text {
+    font-size: 1.3em;
+  }
+
+  .sub-text {
+    font-size: 1em;
   }
 }

@@ -2,15 +2,21 @@
   font-size: 2em;
   margin: 1vh 2vw;
 }
+ 
+@media screen
+ 
+and (min-device-width: 1270px)
+and (max-device-width: 1600px)
+ 
+{
 
-.table-container {
-  width: 85%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  .table{
+    width: 90%;
+  }
 
-.table {
-  margin-top: 5vh;
-  width: 90%;
+  .modal-excluir-container{
+    min-width: 24vw;
+    min-height: 4vh;
+  }
 }
+ 

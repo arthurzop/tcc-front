@@ -1,17 +1,16 @@
 import "./agendamento.css";
 import HeaderSidebar from "../../components/header-sidebar/header-sidebar";
 import "react-widgets/styles.css";
-import DatePicker from "react-widgets/DatePicker";
+// import DatePicker from "react-widgets/DatePicker";
 import { Bounce, ToastContainer, toast } from "react-toastify";
-import { Input, Upload } from "antd";
 import { useState } from "react";
+import * as I from 'iconoir-react'
+import * as M from "@mui/material"
+import * as X from "@mui/x-date-pickers"
+import { Upload } from 'antd'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
-import upload from "../../assets/images/upload.svg";
-import asideImage from "../../assets/images/aside-image.svg";
-
-const { Dragger } = Upload;
-const { TextArea } = Input;
-
+const { Dragger } = Upload
 export default function Agendamento() {
   const [pNome, setPNome] = useState("");
   const [pData, setPData] = useState("");
@@ -26,78 +25,61 @@ export default function Agendamento() {
   };
 
   const handleEnviar = async () => {
-    if (pNome === "" || pData === "" || pTempo === "" || pDescricao === "") {
+    if (pNome === "" || pTempo === "" || pDescricao === "") {
       console.log(pNome, pData, pTempo, pDescricao);
       toast.warn("Preencha todos os campos");
     } else {
+      toast.success("Enviado com sucesso!")
+      setNull()
     }
   };
 
   return (
-    <div className="section-body">
-      <ToastContainer
-        position="bottom-right"
-        autoClose={3000}
-        limit={1}
-        closeOnClick
-        draggable
-        pauseOnHover={false}
-        transition={Bounce}
-      />
+    <X.LocalizationProvider dateAdapter={AdapterDayjs}>
+      <div className="section-body">
+        <ToastContainer
+          position="bottom-right"
+          autoClose={3000}
+          limit={1}
+          closeOnClick
+          draggable
+          pauseOnHover={false}
+          transition={Bounce}
+        />
 
-      <HeaderSidebar />
-      <div className="section-container">
-        <div className="agendamento-form-container">
-          <h1 className="section-title">Agende a Impressão</h1>
-          <div className="input-container">
-            <p className="label">Nome do Projeto: </p>
-            <Input
-              placeholder="Ex: Peça para apoio de celular."
-              className="antd-input"
-              allowClear
-              maxLength={110}
-              onChange={(e) => setPNome(e.target.value)}
-            />
-            <div className="datetime-container">
-              <div className="datetime-sub-container">
-                <p className="label">Escolha a data: </p>
-                <DatePicker
-                  placeholder="dd/mm/aaaa"
-                  className="datepicker"
-                  onChange={(e) => setPData(e.target.value)}
-                />
+        <HeaderSidebar />
+        <div className="section-container">
+          <div className="agendamento-form-container">
+            <h1 className="section-title">Agende a Impressão</h1>
+            <div className="input-container">
+              <p className="label">Nome do Projeto: </p>
+
+              <M.TextField variant="outlined" label="Nome do projeto" />
+              <div className="datetime-container">
+                <div className="datetime-sub-container">
+                  <p className="label">Escolha a data: </p>
+                  <X.DatePicker className="timepicker"></X.DatePicker>
+                </div>
+                <div className="datetime-sub-container">
+                  <p className="label">Tempo estimado de impressão: </p>
+                  <X.TimePicker views={['hours', 'minutes']} format="hh:mm" className="timepicker"></X.TimePicker>
+                </div>
               </div>
-              <div className="datetime-sub-container">
-                <p className="label">Tempo estimado de impressão: </p>
-                <input
-                  type="time"
-                  className="timepicker"
-                  onChange={(e) => setPTempo(e.target.value)}
-                />
-              </div>
+              <p className="label">Descrição do Projeto:</p>
+              <M.TextField multiline minRows={2} maxRows={4} placeholder="Escreva uma breve descrição do projeto." label="Descrição"></M.TextField>
+              <p className="label">Escolha o arquivo:</p>
+              <Dragger className="dragger-container">
+                <I.CloudUpload />
+                <h2 className="dragger-text">Arraste e solte o arquivo.</h2>
+                <p className="dragger-info">
+                  Envie um arquivo que mostre claramente o que deseja imprimir, em
+                  formato pdf ou imagem. <br />
+                  (.pdf, .png, .jpeg, etc.)
+                </p>
+              </Dragger>
             </div>
-            <p className="label">Descrição do Projeto:</p>
-            <Input
-              allowClear
-              rows={3}
-              maxLength={100}
-              showCount
-              placeholder="Escreva uma breve descrição do projeto:"
-              className="antd-input"
-              onChange={(e) => setPDescricao(e.target.value)}
-            />
-            <p className="label">Escolha o arquivo:</p>
-            <Dragger className="dragger-container">
-              <img src={upload} alt="" />
-              <h2 className="dragger-text">Arraste e solte o arquivo.</h2>
-              <p className="dragger-info">
-                Envie um arquivo que mostre claramente o que deseja imprimir, em
-                formato pdf ou imagem. <br />
-                (.pdf, .png, .jpeg, etc.)
-              </p>
-            </Dragger>
             <button
-              className="default-button"
+              className="system-btn agendamento-btn"
               onClick={() => {
                 handleEnviar();
               }}
@@ -106,8 +88,8 @@ export default function Agendamento() {
             </button>
           </div>
         </div>
+        {/* <img src={asideImage} alt="" className="aside-image" /> */}
       </div>
-      <img src={asideImage} alt="" className="aside-image" />
-    </div>
+    </X.LocalizationProvider>
   );
 }

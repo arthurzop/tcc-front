@@ -1,20 +1,25 @@
 .section-body {
-  background-color: var(--icewind-dale);
+  background-color: var(--doctor);
   height: 100vh;
   font-family: var(--dm-sans);
   overflow: hidden;
   position: relative;
+  width: 100%;
+  
 }
 
 .section-container {
-  position: absolute;
-  margin: 13vh 0vw 0vh 15vw;
+  margin: 12vh 0vw 0vh 15vw;
   padding: 2vh;
-  width: 100%;
+  display: flex;
+  z-index: 1;
+  position: relative;
+  flex-direction: column;
+  overflow-y: scroll;
 }
 
 .agendamento-form-container {
-  width: 60%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,18 +32,9 @@
 }
 
 .input-container {
-  width: 80%;
+  width: 60%;
   display: flex;
   flex-direction: column;
-}
-
-.aside-image {
-  position: absolute;
-  right: 0;
-  z-index: 0;
-  margin: 10vh 0;
-  height: 95vh;
-  overflow-y: hidden !important;
 }
 
 .label {
@@ -50,34 +46,18 @@
 .datetime-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
-  gap: 2vw;
   text-wrap: nowrap;
 }
 
 .datetime-sub-container {
+  width: 45%;
+}
+
+.timepicker{
   width: 100%;
 }
-
-.timepicker {
-  width: 100%;
-  height: 4vh;
-  outline: none;
-  border: 1px solid var(--cloud-cover);
-  border-radius: 5px;
-
-  font-size: 1.3em;
-  color: var(--pompeii-ash);
-  padding-inline-start: 1vw;
-}
-
-.antd-input,
-.timepicker {
-  height: 5vh;
-  max-height: 5vh;
-  min-height: 5vh;
-}
-
 .dragger-text {
   font-weight: var(--semi-bold);
 }
@@ -87,32 +67,6 @@
   align-self: center;
   text-align: center;
   color: var(--pompeii-ash);
-}
-
-.default-button {
-  color: var(--doctor);
-  background-color: var(--cosmic-cobalt);
-  border: none;
-  outline: none;
-  padding: 1.5vh 4vw;
-  font-size: 1.4em;
-  font-weight: var(--semi-bold);
-  border-radius: 10px;
-  box-shadow: 0px 0px 5px 0px #000000;
-  cursor: pointer;
-  align-self: center;
-  max-width: 20vw;
-  margin: 5vh 0;
-}
-
-.default-button:hover {
-  background-color: #4436c4;
-  transition: all 0.5s;
-}
-
-.default-button:hover:active {
-  transform: scale(1.01);
-  transition: all 0.1s;
 }
 
 .dragger-text {
@@ -141,7 +95,7 @@
   right: 43%;
   width: 30vw;
   height: fit-content;
-  z-index: 1;
+  z-index: 3;
 
   color: var(--washed-black);
 }
@@ -187,8 +141,27 @@
   background-color: var(--pompeii-ash);
 }
 
-@media (max-width: 1536px) {
-  .agendamento-form-container {
-    gap: 0;
-  }
+.agendamento-btn{
+  width: 20%;
 }
+
+@media screen 
+  and (min-device-width: 1270px) 
+  and (max-device-width: 1600px) {
+  
+    .agendamento-button{
+
+    }
+
+    .dragger-container{
+      height: fit-content;
+    }
+
+    .input-container{
+      overflow-y: scroll;
+      height: 60vh;
+      width: 100%;
+      padding: 0 2vw;
+    }
+}
+

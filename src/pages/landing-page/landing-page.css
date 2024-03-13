@@ -472,14 +472,40 @@ footer {
   font-weight: var(--regular);
 }
 
-@media (max-width: 1536px) {
+@media screen 
+  and (min-device-width: 1270px) 
+  and (max-device-width: 1600px) {
   main {
     width: 100%;
   }
 
   .hero-container {
-    margin: -10vh 5vw 0;
-    justify-content: space-around;
-    height: 100%;
+    margin: 0 5vw;
+    
+  }
+
+  .hero-title{
+    font-size: 4em;
+  }
+
+  .hero-image{
+    width: 500px;
+  }
+
+  .hero-button{
+    text-transform: none;
+    padding: 2vh 3vw;
+  }
+  
+  .sobre-container{
+    width: 100%;
+  }
+
+  .sobre-text{
+    font-size: 2em;
+  }
+
+  .sobre-image{
+    height: 200px;
   }
 }

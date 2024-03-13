@@ -21,13 +21,7 @@
   width: 22vw;
   height: 100vh;
   align-self: flex-end;
-  background: rgb(33, 37, 41);
-  background: linear-gradient(
-    168deg,
-    rgba(33, 37, 41, 1) 15%,
-    rgba(52, 58, 64, 1) 59%,
-    rgba(73, 80, 87, 1) 90%
-  );
+  background-color: var(--washed-black);
   padding: 2vh;
   display: flex;
   flex-direction: column;
@@ -92,6 +86,11 @@ label{
   width: 100%;
 }
 
+.login-input-container{
+  display: flex;
+  flex-direction: column;
+}
+
 .esqueci-senha{
   color: var(--shy-moment);
   text-decoration: underline;
@@ -104,16 +103,10 @@ label{
   width: 60%;
   padding: 1.5vh;
   color: var(--doctor);
-  background: rgb(49, 39, 135);
-  background: linear-gradient(
-    123deg,
-    rgba(49, 39, 135, 1) 0%,
-    rgba(90, 72, 249, 1) 34%,
-    rgba(67, 24, 255, 1) 100%
-  );
+  background-color: var(--blurstering-blue);
   border: none;
   outline: none;
-  border-radius: 1em;
+  border-radius: 10px;
   align-self: center;
   box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
   font-size: 1.6em;
@@ -171,4 +164,48 @@ label{
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 2vh;
+}
+
+.cadastro-input{
+  color: var(--doctor);
+}
+
+@media screen 
+  and (min-device-width: 1270px) 
+  and (max-device-width: 1600px) {
+  
+  .login-title{
+    font-size: 2.5em;
+  }
+
+  .form-container{
+    gap: 5vh;
+  }
+
+  .login-button{
+    padding: 1.5vh;
+    font-size: 1.3em;
+    font-weight: var(--regular);
+  }
+
+  .login-links-container{
+      text-wrap: nowrap;
+      font-size: .8em;
+  }
+
+  .cadastro-container{
+    overflow-y: scroll;
+    max-height: 60vh;
+    gap: 0;
+  }
+
+  .cadastro-form{
+    gap: 0;
+  }
+
+
+  .label{
+    font-size: 1em;
+  }
 }
