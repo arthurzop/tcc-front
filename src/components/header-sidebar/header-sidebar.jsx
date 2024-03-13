@@ -135,14 +135,8 @@ export default function HeaderSidebar() {
         </div>
         {menuOpen && (
           <>
-            <div
-              className="hs-overlay"
-              onClick={() => {
-                setMenuOpen(false);
-              }}
-            ></div>
             <div className="hs-modal-container">
-              <h1 className="modal-name">Manuela Vaz</h1>
+              <h1 className="modal-name">Otávio Ribeiro</h1>
               <h3 className="modal-cargo">Admin</h3>
               <div className="modal-divider"></div>
               <div className="modal-sair-container">
@@ -167,6 +161,7 @@ export default function HeaderSidebar() {
                 </div>
               </div>
             </div>
+           
           </>
         )}
       </I.IconoirProvider>

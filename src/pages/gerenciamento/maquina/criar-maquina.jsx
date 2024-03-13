@@ -15,7 +15,7 @@ export default function CriarMaquina() {
           <div className="maquina">
             <div className="cadastrar-column">
               <div className="maquina-input">
-                <p className="cadastrar-label">Nome: (unitário)</p>
+                <p className="cadastrar-label">Nome:</p>
                 <M.TextField fullWidth></M.TextField>
               </div>
               <div className="maquina-input">

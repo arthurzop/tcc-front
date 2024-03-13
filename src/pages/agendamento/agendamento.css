@@ -1,20 +1,21 @@
 .section-body {
-  background-color: var(--icewind-dale);
+  background-color: var(--doctor);
   height: 100vh;
   font-family: var(--dm-sans);
   overflow: hidden;
   position: relative;
   width: 100%;
- 
+  
 }
 
 .section-container {
   margin: 12vh 0vw 0vh 15vw;
   padding: 2vh;
   display: flex;
-  z-index: 10;
+  z-index: 1;
   position: relative;
   flex-direction: column;
+  overflow-y: scroll;
 }
 
 .agendamento-form-container {
@@ -36,15 +37,6 @@
   flex-direction: column;
 }
 
-.aside-image {
-  position: absolute;
-  right: 0;
-  z-index: 0;
-  margin: 10vh 0;
-  height: 95vh;
-  overflow-y: hidden !important;
-}
-
 .label {
   font-weight: var(--semi-bold);
   font-size: 1.2em;
@@ -54,22 +46,18 @@
 .datetime-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
-  gap: 2vw;
   text-wrap: nowrap;
 }
 
 .datetime-sub-container {
+  width: 45%;
+}
+
+.timepicker{
   width: 100%;
 }
-
-
-.antd-input{
-   height: 5vh;
-  max-height: 5vh;
-  min-height: 5vh;
-}
-
 .dragger-text {
   font-weight: var(--semi-bold);
 }
@@ -107,7 +95,7 @@
   right: 43%;
   width: 30vw;
   height: fit-content;
-  z-index: 1;
+  z-index: 3;
 
   color: var(--washed-black);
 }
@@ -151,6 +139,10 @@
 .grey {
   color: var(--washed-black);
   background-color: var(--pompeii-ash);
+}
+
+.agendamento-btn{
+  width: 20%;
 }
 
 @media screen 

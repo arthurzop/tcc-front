@@ -10,16 +10,27 @@ export default function Perfis() {
   var pathname = location.pathname.split("/");
   var pathname = location.pathname.replace("%20", " ").replace("/", "");
 
-  function createData(nome, email, cargo) {
-    return { nome, email, cargo };
+  function createData(id, nome, email, cargo) {
+    return { id, nome, email, cargo };
   }
 
   const rows = [
-    createData("Ágatha Costa", "email.exemplo@email.com", "Aluno"),
-    createData("Luan Almeida", "email.exemplo@email.com", "Professor"),
-    createData("Martim Santos", "email.exemplo@email.com", "Coordenador"),
-    createData("Letícia Ferreira ", "email.exemplo@email.com", "Funcionário"),
-    createData("Joao Ferreira", "email.exemplo@email.com", "Aluno"),
+    createData(1, "Ágatha Costa", "email.exemplo@email.com", "Aluno"),
+    createData(1, "Luan Almeida", "email.exemplo@email.com", "Professor"),
+    createData(1, "Martim Santos", "email.exemplo@email.com", "Coordenador"),
+    createData(1, "Letícia Ferreira ", "email.exemplo@email.com", "Funcionário"),
+    createData(1, "Joao Ferreira", "email.exemplo@email.com", "Aluno"),
+    createData(1, "Joao Ferreira", "email.exemplo@email.com", "Aluno"),
+    createData(1, "Joao Ferreira", "email.exemplo@email.com", "Aluno"),
+    createData(1, "Joao Ferreira", "email.exemplo@email.com", "Aluno"),
+    createData(1, "Joao Ferreira", "email.exemplo@email.com", "Aluno"),
+    createData(1, "Joao Ferreira", "email.exemplo@email.com", "Aluno"),
+    createData(1, "Joao Ferreira", "email.exemplo@email.com", "Aluno"),
+    createData(1, "Joao Ferreira", "email.exemplo@email.com", "Aluno"),
+    createData(1, "Joao Ferreira", "email.exemplo@email.com", "Aluno"),
+    createData(1, "Joao Ferreira", "email.exemplo@email.com", "Aluno"),
+    createData(1, "Joao Ferreira", "email.exemplo@email.com", "Aluno"),
+    createData(1, "Joao Ferreira", "email.exemplo@email.com", "Aluno"),
   ];
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -34,30 +45,32 @@ export default function Perfis() {
           <h1 className="pedidos-title">{pathname}</h1>
           <button
             className="system-btn"
-            onClick={() => nav("/cadastrar material")}
+            onClick={() => nav("/criar perfil")}
           >
             Cadastrar Perfil
           </button>
         </div>
 
-        <M.TableContainer component={Paper} className="table-container">
-          <M.Table aria-label="simple table">
-            <M.TableHead>
+        <M.TableContainer component={Paper} className="table-container" sx={{ maxHeight: 640 }}>
+          <M.Table aria-label="simple table" stickyHeader>
+            <M.TableHead >
               <M.TableRow>
-                <M.TableCell>Nome</M.TableCell>
-                <M.TableCell align="left">Email</M.TableCell>
-                <M.TableCell align="left">Cargo</M.TableCell>
+                <M.TableCell><b>Id</b></M.TableCell>
+                <M.TableCell><b>Nome</b></M.TableCell>
+                <M.TableCell align="left"><b>Email</b></M.TableCell>
+                <M.TableCell align="left"><b>Cargo</b></M.TableCell>
                 <M.TableCell align="center">
-                  <I.EditPencil />
+                  <b></b>
                 </M.TableCell>
                 <M.TableCell align="center">
-                  <I.Trash />
+                  <b></b>
                 </M.TableCell>
               </M.TableRow>
             </M.TableHead>
             <M.TableBody>
               {rows.map((row) => (
                 <M.TableRow key={row.nome}>
+                  <M.TableCell>{row.id}</M.TableCell>
                   <M.TableCell component="th" scope="row">
                     {row.nome}
                   </M.TableCell>
@@ -85,6 +98,7 @@ export default function Perfis() {
       </div>
       {modalOpen && (
         <>
+
           <div className="modal-excluir-container">
             <h1 className="modal-title">Tem certeza?</h1>
             <div className="modal-divider"></div>
@@ -110,12 +124,7 @@ export default function Perfis() {
               </button>
             </div>
           </div>
-          <div
-            className="hs-overlay"
-            onClick={() => {
-              setModalOpen(!modalOpen);
-            }}
-          ></div>
+          <div className="hs-overlay" onClick={() => { setModalOpen(!modalOpen) }}></div>
         </>
       )}
     </div>
