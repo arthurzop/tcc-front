@@ -470,6 +470,9 @@ footer {
   font-weight: var(--regular);
 }
 
+/* Media Queries para notebook */
+
+
 @media screen and (min-device-width: 1270px) and (max-device-width: 1600px) {
   main {
     width: 100%;
@@ -507,7 +510,7 @@ footer {
   }
 }
 
-/* 576 */
+/* Media Queries para celular */
 
 @media screen and (min-device-width: 320px) and (max-device-width: 576px) {
   .mobile {
@@ -524,7 +527,6 @@ footer {
     max-width: 100%;
     overflow-x: hidden;
   }
-  
 
   header {
     position: relative;
@@ -562,7 +564,7 @@ footer {
     display: none;
   }
 
-  .card-image{
+  .card-image {
     display: block;
     margin: 2vh 0;
   }
@@ -611,65 +613,64 @@ footer {
     margin-inline-start: 10vw;
   }
 
-  .sobre-text{
+  .sobre-text {
     font-size: 1em;
     width: 90%;
     text-align: center;
   }
 
-  .sobre-sub-container{
+  .sobre-sub-container {
     width: 100%;
     justify-content: center;
   }
 
-  .card-container{
+  .card-container {
     flex-direction: column;
     gap: 4vh;
   }
 
-  .card-impressora{
+  .card-impressora {
     max-width: fit-content;
     height: fit-content;
     padding: 4vh;
     gap: 2vh;
   }
 
-  .card-title{
+  .card-title {
     font-size: 1.8em;
   }
 
-  .card-text{
+  .card-text {
     font-size: 1em;
   }
 
-  .tutorial-container{
+  .tutorial-container {
     max-width: 100%;
     width: 100%;
     align-self: center;
   }
 
-  .tutorial-divider{
+  .tutorial-divider {
     width: 80%;
   }
 
-  .tutorial-text{
+  .tutorial-text {
     max-width: 80%;
     font-size: 1.8em;
     text-align: center;
   }
 
-  .background-text{
+  .background-text {
     font-size: 2em;
     margin-inline-end: 1vw;
   }
 
-  .tutorial-button{
+  .tutorial-button {
     font-size: 1.4em;
   }
 
-  .horario-column > h2{
+  .horario-column > h2 {
     font-size: 1.4em;
     text-wrap: nowrap;
   }
-
 }

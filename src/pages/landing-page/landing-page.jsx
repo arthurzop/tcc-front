@@ -1,6 +1,7 @@
 import "../../App.css";
 import "./landing-page.css";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 // importando as libs
 import { slide as Menu } from "react-burger-menu";
@@ -11,7 +12,6 @@ import * as I from 'iconoir-react'
 
 // importando imagens
 import logoSenai from "../../assets/images/logo-senai.svg";
-import menuHamburguer from "../../assets/images/menu-svgrepo-com (1).svg";
 import heroImage from "../../assets/images/hero-image-full.svg";
 import espaco1 from "../../assets/images/espaco1.svg";
 import espaco2 from "../../assets/images/espaco2.svg";
@@ -27,7 +27,7 @@ import vanguardLogo from "../../assets/images/vanguard-logo.svg";
 export default function LandingPage() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // const nav = useNavigate();
+  const nav = useNavigate();
 
   useEffect(() => {
     AOS.init();
@@ -48,11 +48,11 @@ export default function LandingPage() {
             onClick={() => {
               setMenuOpen(!menuOpen);
             }}
-            color="white"/>
-            <div className="nav-mobile mobile">
-              <h4 className="header-text mobile" >Login</h4>
-              <h4 className="header-text mobile" >Cadastro</h4>
-            </div>
+            color="white" />
+          <div className="nav-mobile mobile">
+            <h4 className="header-text mobile" onClick={() => { nav("/login") }}>Login</h4>
+            <h4 className="header-text mobile" onClick={() => { nav("/cadastro") }}>Cadastro</h4>
+          </div>
         </div>
       </header>
       <Menu
@@ -126,7 +126,7 @@ export default function LandingPage() {
               impressão 3D e outras tecnologias.
 
               <span className="desktop">
-              No Espaço Maker, os alunos são incentivados a explorar sua criatividade e a desenvolver habilidades práticas, aplicando conceitos de design e engenharia em projetos reais. Com acesso a equipamentos de última geração, como impressoras 3D e cortadoras a laser, eles podem transformar suas ideias em protótipos tangíveis e soluções inovadoras. Além disso, os professores estão disponíveis para orientar e auxiliar os alunos em seus projetos, promovendo um ambiente colaborativo e de aprendizado contínuo.
+                No Espaço Maker, os alunos são incentivados a explorar sua criatividade e a desenvolver habilidades práticas, aplicando conceitos de design e engenharia em projetos reais. Com acesso a equipamentos de última geração, como impressoras 3D e cortadoras a laser, eles podem transformar suas ideias em protótipos tangíveis e soluções inovadoras. Além disso, os professores estão disponíveis para orientar e auxiliar os alunos em seus projetos, promovendo um ambiente colaborativo e de aprendizado contínuo.
               </span>
             </h3>
             <div className="sobre-image-container">
