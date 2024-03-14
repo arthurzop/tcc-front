@@ -202,3 +202,14 @@ label {
     font-size: 1em;
   }
 }
+
+@media screen and (min-device-width: 320px) and (max-device-width: 576px) {
+
+  .body{
+    background-image: none;
+  }
+
+  .login-sidebar{
+    width: 100%;
+  }
+}

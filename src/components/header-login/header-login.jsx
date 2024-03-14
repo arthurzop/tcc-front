@@ -11,7 +11,7 @@ export default function HeaderLogin() {
         <h1 className="header-title" onClick={() => {nav("/")}}>
           Espaço Maker <span>3D</span>
         </h1>
-        <img src={logoSenai} alt="" />
+        <img src={logoSenai} alt="" className="logo-senai mobile"/>
       </div>
     </>
   );
