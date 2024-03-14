@@ -7,6 +7,7 @@ import { slide as Menu } from "react-burger-menu";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ScrollIntoView from "react-scroll-into-view";
+import * as I from 'iconoir-react'
 
 // importando imagens
 import logoSenai from "../../assets/images/logo-senai.svg";
@@ -35,21 +36,23 @@ export default function LandingPage() {
   return (
     <body>
       <header data-aos="fade-down">
-        <img src={logoSenai} alt="logo" className="logo-senai" />
+        <img src={logoSenai} alt="logo" className="logo-senai desktop" />
         <div className="sub-header">
           <ScrollIntoView selector="#top">
             <h1 className="header-name">
               Espaço Maker <span className="span-header">3D</span>
             </h1>
           </ScrollIntoView>
-          <img
-            src={menuHamburguer}
-            alt="menu hamburguer"
-            className="icon-menu-hamburguer"
+          <I.Menu alt="menu hamburguer"
+            className="icon-menu-hamburguer desktop"
             onClick={() => {
               setMenuOpen(!menuOpen);
             }}
-          />
+            color="white"/>
+            <div className="nav-mobile mobile">
+              <h4 className="header-text mobile" >Login</h4>
+              <h4 className="header-text mobile" >Cadastro</h4>
+            </div>
         </div>
       </header>
       <Menu
@@ -95,6 +98,7 @@ export default function LandingPage() {
           data-aos-duration="1000"
           id="hero"
         >
+
           <div className="hero-sub-container">
             <h1 className="hero-title">
               Conheça o <br /> nosso espaço.
@@ -112,13 +116,18 @@ export default function LandingPage() {
           data-aos-duration="2000"
           id="sobre"
         >
-          <h1 className="sobre-title">Sobre Nós</h1>
+          <h1 className="sobre-title">Sobre Nós <div className="sobre-divider"></div></h1>
+
           <div className="sobre-sub-container">
             <h3 className="sobre-text">
               O Espaço Maker foi uma área criada na Escola Senai
               Suiço-Brasileira - SP. Feito para disponibilizar um espaço para
               alunos e professores utilizarem das mais novas tecnologias de
               impressão 3D e outras tecnologias.
+
+              <span className="desktop">
+              No Espaço Maker, os alunos são incentivados a explorar sua criatividade e a desenvolver habilidades práticas, aplicando conceitos de design e engenharia em projetos reais. Com acesso a equipamentos de última geração, como impressoras 3D e cortadoras a laser, eles podem transformar suas ideias em protótipos tangíveis e soluções inovadoras. Além disso, os professores estão disponíveis para orientar e auxiliar os alunos em seus projetos, promovendo um ambiente colaborativo e de aprendizado contínuo.
+              </span>
             </h3>
             <div className="sobre-image-container">
               <img src={espaco1} alt="a" className="sobre-image" />
@@ -132,7 +141,7 @@ export default function LandingPage() {
           data-aos="fade-right"
           data-aos-duration="2000"
         >
-          <h1 className="impressoras-title">Nossas Impressoras</h1>
+          <h1 className="impressoras-title">Nossas Impressoras<div className="sobre-divider"></div></h1>
           <div className="card-container">
             <div className="card-impressora">
               <h2 className="card-title">Impressora 3D Creality CR-5 Pro</h2>
@@ -175,9 +184,8 @@ export default function LandingPage() {
           data-aos-duration="2000"
         >
           <h1 className="tutorial-title" id="tutorial">
-            Como Agendar
+            Como Agendar <div className="sobre-divider"></div>
           </h1>
-          <div className="tutorial-divider-up"></div>
           <div
             className="tutorial-sub-container"
             data-aos="fade-right"
@@ -196,7 +204,7 @@ export default function LandingPage() {
             data-aos="fade-left"
             data-aos-duration="3000"
           >
-            
+
             <img className="tutorial-image" src={tutorial4} alt="" />
             <p className="tutorial-text">
               <span className="background-text">2. </span>Separe seu projeto em
@@ -216,7 +224,7 @@ export default function LandingPage() {
               agendamento.
             </p>
             <img className="tutorial-image" src={tutorial3} alt="" />
-            
+
           </div>
           <div className="tutorial-divider"></div>
           <div
@@ -239,7 +247,7 @@ export default function LandingPage() {
           data-aos-duration="2000"
           id="horario"
         >
-          <h1 className="horario-title">Horários</h1>
+          <h1 className="horario-title">Horários<div className="sobre-divider"></div></h1>
           <div className="horario-sub-container">
             <div className="horario-column">
               <h2>Seg. a Sex.</h2>

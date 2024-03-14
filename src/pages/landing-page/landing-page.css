@@ -1,4 +1,9 @@
 /* 1536  */
+
+.mobile {
+  display: none;
+}
+
 body {
   background: rgb(52, 58, 64);
   display: flex;
@@ -20,6 +25,7 @@ header {
   box-shadow: 0px 1px 22px 4px rgba(0, 0, 0, 0.103);
   position: fixed;
   z-index: 99;
+  overflow-x: hidden;
 }
 
 .sub-header {
@@ -34,8 +40,9 @@ header {
 }
 
 .icon-menu-hamburguer {
-  width: 3em;
+  font-size: 2em;
   cursor: pointer;
+  align-self: center;
 }
 
 .header-name {
@@ -55,7 +62,6 @@ header {
   color: var(--doctor);
   border-radius: 10px;
   border-top-right-radius: 0px;
-  right: 0px;
   margin: 12vh 1vw;
   box-shadow: 0px 1px 22px 4px rgba(0, 0, 0, 0.5);
 }
@@ -198,12 +204,7 @@ main {
   left: -40px;
   transform: skewX(45deg);
   background: rgb(49, 39, 135);
-  background: linear-gradient(
-    123deg,
-    rgba(49, 39, 135, 1) 0%,
-    rgba(90, 72, 249, 1) 34%,
-    rgba(67, 24, 255, 1) 100%
-  );
+  background: linear-gradient(123deg, rgba(49, 39, 135, 1) 0%, rgba(90, 72, 249, 1) 34%, rgba(67, 24, 255, 1) 100%);
   z-index: -1;
   transition: all 1s;
 }
@@ -226,12 +227,7 @@ main {
   left: -40px;
   transform: skewX(45deg);
   background: rgb(49, 39, 135);
-  background: linear-gradient(
-    123deg,
-    rgba(49, 39, 135, 1) 0%,
-    rgba(90, 72, 249, 1) 34%,
-    rgba(67, 24, 255, 1) 100%
-  );
+  background: linear-gradient(123deg, rgba(49, 39, 135, 1) 0%, rgba(90, 72, 249, 1) 34%, rgba(67, 24, 255, 1) 100%);
   z-index: -1;
   transition: all 1s;
 }
@@ -247,8 +243,7 @@ main {
 }
 
 .sobre-container,
-.impressoras-container,
-.tutorial-container {
+.impressoras-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -265,6 +260,16 @@ main {
   text-shadow: -3px -2px 0px var(--blurstering-blue);
 }
 
+.sobre-title {
+  align-self: flex-start;
+  margin-inline-start: 10vw;
+}
+
+.sobre-divider {
+  width: 50%;
+  border: 2px solid var(--blurstering-blue);
+}
+
 .sobre-sub-container {
   width: 80%;
   display: flex;
@@ -275,7 +280,7 @@ main {
 
 .sobre-text {
   width: 70%;
-  font-size: 2.2em;
+  font-size: 1.4em;
   line-height: 2;
   font-weight: var(--semi-bold);
 }
@@ -340,27 +345,20 @@ main {
 }
 
 .tutorial-container {
-  margin: 5vh 8vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10vh;
+  margin: 5vh 0;
   background: rgb(33, 37, 41);
-  background: linear-gradient(
-    149deg,
-    rgba(33, 37, 41, 1) 0%,
-    rgba(52, 58, 64, 1) 48%,
-    rgba(33, 37, 41, 1) 100%
-  );
-  border-radius: 20px;
+  background: linear-gradient(149deg, rgba(33, 37, 41, 1) 0%, rgba(52, 58, 64, 1) 48%, rgba(33, 37, 41, 1) 100%);
   padding: 6vh 0;
 }
 
 .tutorial-divider {
   width: 50%;
   border: solid 0.5px var(--pompeii-ash);
-}
-
-.tutorial-divider-up {
-  width: 30%;
-  border: 1px solid var(--pompeii-ash);
-  margin-top: -6vh;
 }
 
 .tutorial-sub-container {
@@ -507,4 +505,171 @@ footer {
   .sobre-image {
     height: 200px;
   }
+}
+
+/* 576 */
+
+@media screen and (min-device-width: 320px) and (max-device-width: 576px) {
+  .mobile {
+    display: block;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+
+  header {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  .sub-header {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .menu-hamburger {
+    display: none;
+  }
+
+  .nav-mobile {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+  }
+
+  .header-name {
+    font-size: 1.2em;
+  }
+
+  .header-text {
+    color: var(--shy-moment);
+    font-weight: var(--semi-bold);
+  }
+
+  img {
+    display: none;
+  }
+
+  .card-image{
+    display: block;
+    margin: 2vh 0;
+  }
+
+  .hero-sub-container {
+    gap: 5vh;
+  }
+
+  .hero-title {
+    font-size: 3em;
+  }
+
+  .hero-button {
+    font-size: 1em;
+    text-transform: none;
+    padding: 1.5vh 3vw;
+  }
+
+  .section {
+    overflow-x: hidden;
+    margin-top: -45vh;
+    width: 150vw;
+  }
+
+  .main {
+    overflow-x: hidden;
+    align-items: center;
+  }
+
+  .hero-container {
+    margin-top: 0;
+    position: relative;
+  }
+
+  .logo-senai {
+    width: 120px;
+    align-self: flex-start;
+  }
+
+  .sobre-title,
+  .impressoras-title,
+  .tutorial-title,
+  .horario-title {
+    font-size: 2em;
+    align-self: flex-start;
+    margin-inline-start: 10vw;
+  }
+
+  .sobre-text{
+    font-size: 1em;
+    width: 90%;
+    text-align: center;
+  }
+
+  .sobre-sub-container{
+    width: 100%;
+    justify-content: center;
+  }
+
+  .card-container{
+    flex-direction: column;
+    gap: 4vh;
+  }
+
+  .card-impressora{
+    max-width: fit-content;
+    height: fit-content;
+    padding: 4vh;
+    gap: 2vh;
+  }
+
+  .card-title{
+    font-size: 1.8em;
+  }
+
+  .card-text{
+    font-size: 1em;
+  }
+
+  .tutorial-container{
+    max-width: 100%;
+    width: 100%;
+    align-self: center;
+  }
+
+  .tutorial-divider{
+    width: 80%;
+  }
+
+  .tutorial-text{
+    max-width: 80%;
+    font-size: 1.8em;
+    text-align: center;
+  }
+
+  .background-text{
+    font-size: 2em;
+    margin-inline-end: 1vw;
+  }
+
+  .tutorial-button{
+    font-size: 1.4em;
+  }
+
+  .horario-column > h2{
+    font-size: 1.4em;
+    text-wrap: nowrap;
+  }
+
 }

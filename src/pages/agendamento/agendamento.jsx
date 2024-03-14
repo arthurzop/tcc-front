@@ -1,7 +1,5 @@
 import "./agendamento.css";
 import HeaderSidebar from "../../components/header-sidebar/header-sidebar";
-import "react-widgets/styles.css";
-// import DatePicker from "react-widgets/DatePicker";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import { useState } from "react";
 import * as I from 'iconoir-react'

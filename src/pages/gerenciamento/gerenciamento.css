@@ -28,7 +28,7 @@
   justify-content: space-around;
   gap: 1vh;
 
-  animation: 0.5s;
+  animation: .5s;
   box-shadow: 0px 1px 5px 0px var(--pompeii-ash);
 }
 
@@ -69,16 +69,17 @@
   color: var(--doctor);
 }
 
-.top-container {
+.top-container{
   width: 100%;
   height: 5vh;
   display: flex;
   justify-content: space-between;
   padding-inline: 2vw;
   position: inherit;
+  
 }
 
-.system-btn {
+.system-btn{
   font-family: var(--dm-sans);
   font-weight: var(--bold);
   background-color: var(--purplish-blue);
@@ -91,13 +92,14 @@
 
   padding: 1vh 2vw;
   border-radius: 5px;
+  
 }
 
-.system-btn:hover {
+.system-btn:hover{
   background-color: #3511d8;
 }
 
-.cadastrar-container {
+.cadastrar-container{
   display: flex;
   flex-direction: column;
   width: 90%;
@@ -107,42 +109,43 @@
   gap: 4vh;
 }
 
-.maquina {
+.maquina{
   width: 80%;
   display: flex;
   justify-content: space-evenly;
+
 }
 
-.cadastrar-column {
+.cadastrar-column{
   display: flex;
   flex-direction: column;
   gap: 5vh;
   width: 40%;
 }
 
-.cadastrar-input {
+.cadastrar-input{
   width: 40%;
 }
 
-.cadastrar-title {
+.cadastrar-title{
   font-size: 2.5em;
-  margin-inline: auto;
 }
 
-.cadastrar-label {
-  margin-bottom: 0.5vh;
+.cadastrar-label{
+  margin-bottom: .5vh;
   font-size: 1.1em;
 }
 
-.cadastrar-btn {
-  width: 20%;
+.cadastrar-btn{
+   width: 20%;
+   
 }
 
-.cadastrar-dragger {
+.cadastrar-dragger{
   height: 100%;
 }
 
-b {
+b{
   font-size: 1.5em;
 }
 
@@ -207,6 +210,7 @@ b {
   box-shadow: 0 0 20px #4c8bf580;
 }
 
+
 @media screen and (min-device-width: 1270px) and (max-device-width: 1600px) {
   .table {
     width: 90%;
@@ -215,9 +219,5 @@ b {
   .modal-excluir-container {
     min-width: 24vw;
     min-height: 4vh;
-  }
-
-  .cadastrar-container {
-    width: 100%;
   }
 }
