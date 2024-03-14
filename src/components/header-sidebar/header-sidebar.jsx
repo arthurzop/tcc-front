@@ -153,11 +153,11 @@ export default function HeaderSidebar() {
                 <div
                   className="hs-sub-container"
                   onClick={() => {
-                    nav("/meus pedidos");
+                    nav("/");
                   }}
                 >
                   <I.Home />
-                  <h1 className="modal-text">Sair</h1>
+                  <h1 className="modal-text" >Sair</h1>
                 </div>
               </div>
             </div>

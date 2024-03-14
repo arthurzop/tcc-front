@@ -5,7 +5,6 @@
   overflow: hidden;
   position: relative;
   width: 100%;
-  
 }
 
 .section-container {
@@ -55,7 +54,7 @@
   width: 45%;
 }
 
-.timepicker{
+.timepicker {
   width: 100%;
 }
 .dragger-text {
@@ -141,27 +140,37 @@
   background-color: var(--pompeii-ash);
 }
 
-.agendamento-btn{
+.agendamento-btn {
   width: 20%;
 }
 
-@media screen 
-  and (min-device-width: 1270px) 
-  and (max-device-width: 1600px) {
-  
-    .agendamento-button{
+@media screen and (min-device-width: 1270px) and (max-device-width: 1600px) {
+  .dragger-container {
+    height: fit-content;
+  }
 
-    }
-
-    .dragger-container{
-      height: fit-content;
-    }
-
-    .input-container{
-      overflow-y: scroll;
-      height: 60vh;
-      width: 100%;
-      padding: 0 2vw;
-    }
+  .input-container {
+    overflow-y: scroll;
+    height: 60vh;
+    width: 100%;
+    padding: 0 2vw;
+  }
 }
 
+@media screen and (min-device-width: 320px) and (max-device-width: 576px) {
+  .section-container {
+    margin: 10vh 0;
+  }
+
+  .input-container {
+    max-height: 80vh;
+    overflow-x: hidden;
+    margin: 0;
+    width: 90%;
+  }
+
+  .agendamento-btn {
+    width: 50%;
+    margin-top: -2vh;
+  }
+}

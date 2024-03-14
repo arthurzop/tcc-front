@@ -226,3 +226,29 @@
     font-size: 1em;
   }
 }
+
+
+@media screen and (min-device-width: 320px) and (max-device-width: 576px) {
+  .hs-sidebar-container{
+    display: none;
+  }
+
+  .hs-modal-container{
+    margin-top: 8vh;
+    right: 0;
+    width: fit-content;
+  }
+
+  .modal-sair-container{
+    gap: 2vh;
+  }
+
+  .modal-name{
+    font-size: 1.8em;
+  }
+
+  .hs-sub-container:hover{
+    transform: none;
+    transition: none;
+  }
+}
