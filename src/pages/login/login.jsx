@@ -16,9 +16,6 @@ export default function Login(props) {
   const [senha, setSenha] = useState("");
 
   const handleLogin = async () => {
-    setEmail("");
-    setSenha("");
-
     if (email === "" || senha === "") {
       console.log(email, senha);
       toast.warning("Email ou Senha não preenchidos!", { icon: "⚠" });
@@ -28,17 +25,17 @@ export default function Login(props) {
       nav("/agendamento");
     }
 
-    try {
-      const response = await axios.post("http://localhost:4000/login", {
-        email,
-        senha,
-      });
-      console.log(response.data);
-      toast.success("Login realizado com sucesso!");
-    } catch (error) {
-      console.error("Erro ao logar:", error);
-      toast.error("Usuário ou senha incorretos. Por favor, tente novamente.");
-    }
+    // try {
+    //   const response = await axios.post("http://localhost:4000/login", {
+    //     email,
+    //     senha,
+    //   });
+    //   console.log(response.data);
+    //   toast.success("Login realizado com sucesso!");
+    // } catch (error) {
+    //   console.error("Erro ao logar:", error);
+    //   toast.error("Usuário ou senha incorretos. Por favor, tente novamente.");
+    // }
   };
 
   const [showPassword, setShowPassword] = useState(false);
@@ -81,6 +78,7 @@ export default function Login(props) {
                 type={showPassword ? "text" : "password"}
                 sx={{ input: { color: "white" } }}
                 placeholder="••••••••••"
+                onChange={(e) => setSenha(e.target.value)}
                 endAdornment={
                   <M.InputAdornment position="end">
                     <M.IconButton
