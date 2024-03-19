@@ -115,7 +115,8 @@ Esse projeto deve ser usado pela seguinte instituição:
 - Senai Suiço-Brasileira (São Paulo, SP)
 
 
-## Autor
+## Autores
 
 - [@arthurzop](https://www.github.com/arthurzop)
+- [@ArnoldSilva](https://github.com/ArnoldSilva)
 
