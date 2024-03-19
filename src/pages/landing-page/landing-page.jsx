@@ -8,7 +8,7 @@ import { slide as Menu } from "react-burger-menu";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ScrollIntoView from "react-scroll-into-view";
-import * as I from 'iconoir-react'
+import * as I from "iconoir-react";
 
 // importando imagens
 import logoSenai from "../../assets/images/logo-senai.svg";
@@ -43,15 +43,31 @@ export default function LandingPage() {
               Espaço Maker <span className="span-header">3D</span>
             </h1>
           </ScrollIntoView>
-          <I.Menu alt="menu hamburguer"
+          <I.Menu
+            alt="menu hamburguer"
             className="icon-menu-hamburguer desktop"
             onClick={() => {
               setMenuOpen(!menuOpen);
             }}
-            color="white" />
+            color="white"
+          />
           <div className="nav-mobile mobile">
-            <h4 className="header-text mobile" onClick={() => { nav("/login") }}>Login</h4>
-            <h4 className="header-text mobile" onClick={() => { nav("/cadastro") }}>Cadastro</h4>
+            <h4
+              className="header-text mobile"
+              onClick={() => {
+                nav("/login");
+              }}
+            >
+              Login
+            </h4>
+            <h4
+              className="header-text mobile"
+              onClick={() => {
+                nav("/cadastro");
+              }}
+            >
+              Cadastro
+            </h4>
           </div>
         </div>
       </header>
@@ -98,7 +114,6 @@ export default function LandingPage() {
           data-aos-duration="1000"
           id="hero"
         >
-
           <div className="hero-sub-container">
             <h1 className="hero-title">
               Conheça o <br /> nosso espaço.
@@ -109,14 +124,15 @@ export default function LandingPage() {
           </div>
           <img src={heroImage} alt="hero" className="hero-image" />
         </div>
-
         <div
           className="sobre-container"
           data-aos="fade-left"
           data-aos-duration="2000"
           id="sobre"
         >
-          <h1 className="sobre-title">Sobre Nós <div className="sobre-divider"></div></h1>
+          <h1 className="sobre-title">
+            Sobre Nós <div className="sobre-divider"></div>
+          </h1>
 
           <div className="sobre-sub-container">
             <h3 className="sobre-text">
@@ -124,9 +140,16 @@ export default function LandingPage() {
               Suiço-Brasileira - SP. Feito para disponibilizar um espaço para
               alunos e professores utilizarem das mais novas tecnologias de
               impressão 3D e outras tecnologias.
-
               <span className="desktop">
-                No Espaço Maker, os alunos são incentivados a explorar sua criatividade e a desenvolver habilidades práticas, aplicando conceitos de design e engenharia em projetos reais. Com acesso a equipamentos de última geração, como impressoras 3D e cortadoras a laser, eles podem transformar suas ideias em protótipos tangíveis e soluções inovadoras. Além disso, os professores estão disponíveis para orientar e auxiliar os alunos em seus projetos, promovendo um ambiente colaborativo e de aprendizado contínuo.
+                No Espaço Maker, os alunos são incentivados a explorar sua
+                criatividade e a desenvolver habilidades práticas, aplicando
+                conceitos de design e engenharia em projetos reais. Com acesso a
+                equipamentos de última geração, como impressoras 3D e cortadoras
+                a laser, eles podem transformar suas ideias em protótipos
+                tangíveis e soluções inovadoras. Além disso, os professores
+                estão disponíveis para orientar e auxiliar os alunos em seus
+                projetos, promovendo um ambiente colaborativo e de aprendizado
+                contínuo.
               </span>
             </h3>
             <div className="sobre-image-container">
@@ -141,7 +164,9 @@ export default function LandingPage() {
           data-aos="fade-right"
           data-aos-duration="2000"
         >
-          <h1 className="impressoras-title">Nossas Impressoras<div className="sobre-divider"></div></h1>
+          <h1 className="impressoras-title">
+            Nossas Impressoras<div className="sobre-divider"></div>
+          </h1>
           <div className="card-container">
             <div className="card-impressora">
               <h2 className="card-title">Impressora 3D Creality CR-5 Pro</h2>
@@ -177,7 +202,6 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
-
         <div
           className="tutorial-container"
           data-aos="fade-up"
@@ -204,7 +228,6 @@ export default function LandingPage() {
             data-aos="fade-left"
             data-aos-duration="3000"
           >
-
             <img className="tutorial-image" src={tutorial4} alt="" />
             <p className="tutorial-text">
               <span className="background-text">2. </span>Separe seu projeto em
@@ -224,7 +247,6 @@ export default function LandingPage() {
               agendamento.
             </p>
             <img className="tutorial-image" src={tutorial3} alt="" />
-
           </div>
           <div className="tutorial-divider"></div>
           <div
@@ -240,32 +262,48 @@ export default function LandingPage() {
           </div>
           <button className="tutorial-button">Agende agora!</button>
         </div>
-
         <div
-          className="horario-container"
+          className="horario-container row background-elipse"
           data-aos="fade-up"
           data-aos-duration="2000"
           id="horario"
         >
-          <h1 className="horario-title">Horários<div className="sobre-divider"></div></h1>
-          <div className="horario-sub-container">
-            <div className="horario-column">
-              <h2>Seg. a Sex.</h2>
-              <h2>Sábado</h2>
-              <h2>Domingo</h2>
-            </div>
-            <div className="horario-column">
-              <h2>-</h2>
-              <h2>-</h2>
-              <h2>-</h2>
-            </div>
-            <div className="horario-column">
-              <h2>8h às 20h</h2>
-              <h2>Fechado</h2>
-              <h2>Fechado</h2>
+          <div className="horario-container">
+            <h1 className="horario-title">
+              Horários<div className="sobre-divider"></div>
+            </h1>
+            <div className="horario-sub-container">
+              <div className="horario-column">
+                <h2>Seg. a Sex.</h2>
+                <h2>Sábado</h2>
+                <h2>Domingo</h2>
+              </div>
+              <div className="horario-column">
+                <h2>-</h2>
+                <h2>-</h2>
+                <h2>-</h2>
+              </div>
+              <div className="horario-column">
+                <h2>8h às 20h</h2>
+                <h2>Fechado</h2>
+                <h2>Fechado</h2>
+              </div>
             </div>
           </div>
-        </div>
+          <div className="horario-container">
+            <h1 className="horario-title">
+              Localização<div className="sobre-divider"></div>
+            </h1>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5168.655868359939!2d-46.719084316805045!3d-23.647632744249393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce510e8d3746ed%3A0x3e9f3a76e1ebfb69!2sEscola%20Senai%20Su%C3%AD%C3%A7o-Brasileira%20Paulo%20Ernesto%20Tolle!5e0!3m2!1spt-BR!2sbr!4v1710873292481!5m2!1spt-BR!2sbr"
+              width="600"
+              height="450"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>{" "}
         <footer className="footer">
           <img src={vanguardLogo} alt="" className="footer-logo" />
           <div className="footer-nav">
