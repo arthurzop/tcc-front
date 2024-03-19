@@ -31,7 +31,6 @@ export default function Login(props) {
     try {
       const response = await axios.post("http://localhost:4000/login", {
         email,
-
         senha,
       });
       console.log(response.data);
