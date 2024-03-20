@@ -311,12 +311,11 @@ export default function LandingPage() {
               <h2 className="footer-title">Nav</h2>
               <a href="/login">Login</a>
               <a href="#sobre">Sobre</a>
-              <a href="#tutorial">Tutorial</a>
               <a href="#horario">Horários</a>
             </div>
             <div className="footer-sub">
               <h2 className="footer-title">Info</h2>
-              <a href="# ">Nossa Equipe</a>
+              <a href="#tutorial">Tutorial</a>
               <a
                 href="https://sp.senai.br/unidade/suicobrasileira/"
                 target="blank_"

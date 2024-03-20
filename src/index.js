@@ -4,7 +4,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-
 import App from "./App";
 import LandingPage from "./pages/landing-page/landing-page";
 import Login from "./pages/login/login";
@@ -16,14 +15,13 @@ import Pedidos from "./pages/gerenciamento/pedidos/pedidos";
 import CriarPerfil from "./pages/gerenciamento/perfis/criar";
 import EditarPerfil from "./pages/gerenciamento/perfis/editar";
 import Perfis from "./pages/gerenciamento/perfis/perfis";
-import Dashboard from './pages/dashboard/dashboard';
+import Dashboard from "./pages/dashboard/dashboard";
 import NotFound from "./components/not-found/not-found";
 import Maquina from "./pages/gerenciamento/maquina/maquina";
 import CriarMaquina from "./pages/gerenciamento/maquina/criar-maquina";
 import CriarMaterial from "./pages/gerenciamento/material/criar-material";
-import Material from './pages/gerenciamento/material/material'
-
-
+import Material from "./pages/gerenciamento/material/material";
+import RedefinirSenha from "./pages/login/redefinir-senha";
 
 const router = createBrowserRouter([
   {
@@ -40,60 +38,64 @@ const router = createBrowserRouter([
       },
       {
         path: "/esqueciSenha",
-        element: <EsqueciSenha/>
+        element: <EsqueciSenha />,
       },
       {
         path: "/cadastro",
-        element: <Cadastro/>
+        element: <Cadastro />,
       },
       {
         path: "/agendamento",
-        element:  <Agendamento />,
+        element: <Agendamento />,
       },
       {
         path: "/meus pedidos",
-        element: <PedidosUsuario/>
+        element: <PedidosUsuario />,
       },
       {
-        path: '/cadastrar maquina',
-        element: <CriarMaquina/>
+        path: "/cadastrar maquina",
+        element: <CriarMaquina />,
       },
       {
-        path: '/cadastrar material',
-        element: <CriarMaterial/>
+        path: "/cadastrar material",
+        element: <CriarMaterial />,
       },
       {
-        path: '/maquinas',
-        element: <Maquina/>
+        path: "/maquinas",
+        element: <Maquina />,
       },
       {
-        path: '/materiais',
-        element: <Material/>
+        path: "/materiais",
+        element: <Material />,
       },
       {
-        path: '/pedidos',
-        element: <Pedidos/>
+        path: "/pedidos",
+        element: <Pedidos />,
       },
       {
-        path: '/criar perfil',
-        element: <CriarPerfil/>
+        path: "/criar perfil",
+        element: <CriarPerfil />,
       },
       {
-        path: '/editar perfil',
-        element:  <EditarPerfil/>
+        path: "/editar perfil",
+        element: <EditarPerfil />,
       },
       {
-        path: '/perfis',
-        element: <Perfis/>
+        path: "/perfis",
+        element: <Perfis />,
       },
       {
-        path: '/dashboard',
-        element: <Dashboard/>
+        path: "/dashboard",
+        element: <Dashboard />,
       },
       {
-        path: '*',
-        element: <NotFound/>
-      }
+        path: "/redefinirSenha",
+        elemnt: <RedefinirSenha />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
+      },
     ],
   },
 ]);
