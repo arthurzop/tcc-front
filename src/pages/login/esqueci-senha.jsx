@@ -1,11 +1,9 @@
 import "./login.css"
 import HeaderLogin from "../../components/header-login/header-login";
-import { useNavigate } from "react-router-dom";
 import * as M from "@mui/material"
 
 export default function EsqueciSenha() {
 
-  const nav = useNavigate()
 
   return (
     <body className="body">
@@ -25,6 +23,7 @@ export default function EsqueciSenha() {
                   sx={{ input: { color: "white" } }}
                 />
               </div>
+              <p className="login-link login-text">Um Email será direcionando para que consiga redefinir a senha de sua senha.</p>
             </div>
           </div>
           <button className="login-button">Enviar Email</button>

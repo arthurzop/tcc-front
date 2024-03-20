@@ -1,20 +1,9 @@
 .body {
-  overflow: hidden !important;
   max-height: 100vh;
   background-image: url("../../assets/images/background-image.png");
   background-repeat: no-repeat;
   background-size: 80%;
   font-family: var(--dm-sans);
-}
-
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  padding-top: 10%;
-  background-color: rgba(139, 139, 139, 0.8);
 }
 
 .login-sidebar {
@@ -167,6 +156,14 @@ label {
 
 .cadastro-input {
   color: var(--doctor);
+}
+
+.login-text{
+    cursor: default;
+    margin-top: 10vh;
+    font-weight: var(--regular);
+    font-size: 1.2em;
+    text-align: center;
 }
 
 @media screen and (min-device-width: 1270px) and (max-device-width: 1600px) {
