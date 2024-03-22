@@ -13,7 +13,7 @@ export default function Cadastro() {
   const nav = useNavigate();
   const [cargo, setCargo] = useState("");
   const [email, setEmail] = useState("");
-  const [nome, setNome] = useState("");
+  const [nome,  setNome]  = useState("");
   const [turma, setTurma] = useState("");
   const [senha, setSenha] = useState("");
 

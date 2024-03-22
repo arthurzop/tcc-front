@@ -681,4 +681,13 @@ footer {
     font-size: 1.4em;
     text-wrap: nowrap;
   }
+
+  .row{
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .iframe{
+    width: 80%;
+  }
 }

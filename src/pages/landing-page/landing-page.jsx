@@ -301,6 +301,7 @@ export default function LandingPage() {
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
+              className="iframe"
             ></iframe>
           </div>
         </div>{" "}
